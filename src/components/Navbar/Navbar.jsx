@@ -132,25 +132,63 @@ const Navbar = () => {
                             Inicio
                         </a>
                     </li>
-                    <li className="navbar__item">
-                        <a className="navbar__link" href="./carreras.html">
-                            Servicios
+                    <li className="navbar__item navbar__item--submenu">
+                        <a className="navbar__link navbar__link--submenu" href="./servicios.html">
+                            <span>Servicios</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width={20}
+                                height={20}
+                                fill="currentColor"
+                                className="bi bi-chevron-down"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                                />
+                            </svg>
                         </a>
+                        <ul className="navbar__submenu">
+                            <li className="navbar__item">
+                                <a className="navbar__link" href="./carreras.html">
+                                    Carreras
+                                </a>
+                            </li>
+                            <li className="navbar__item">
+                                <a className="navbar__link" href="./stripe.html">
+                                    Pagos
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li className="navbar__item">
-                        <a className="navbar__link" href="./carreras.html">
-                            Testimonios
+                    <li className="navbar__item navbar__item--submenu">
+                        <a
+                            className="navbar__link navbar__link--submenu"
+                            href="./sobre-nosotros.html"
+                        >
+                            <span>Nosotros</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width={20}
+                                height={20}
+                                fill="currentColor"
+                                className="bi bi-chevron-down"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
+                                />
+                            </svg>
                         </a>
-                    </li>
-                    <li className="navbar__item">
-                        <a className="navbar__link" href="./carreras.html">
-                            Carreras
-                        </a>
-                    </li>
-                    <li className="navbar__item">
-                        <a className="navbar__link" href="./sobre-nosotros.html">
-                            Nosotros
-                        </a>
+                        <ul className="navbar__submenu">
+                            <li className="navbar__item">
+                                <a className="navbar__link" href="./testimonios.html">
+                                    Testimonios
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li className="navbar__item">
                         <a className="navbar__link" href="./contacto.html">
@@ -160,11 +198,6 @@ const Navbar = () => {
                     <li className="navbar__item">
                         <a className="navbar__link" href="./blog.html">
                             Blog
-                        </a>
-                    </li>
-                    <li className="navbar__item">
-                        <a className="navbar__link" href="./blog.html">
-                            Pagos
                         </a>
                     </li>
                     <label className="navbar__label navbar__label--close" htmlFor="menu">
@@ -197,6 +230,7 @@ const Navbar = () => {
                     </svg>
                 </label>
             </nav>
+
         </>
     )
 }

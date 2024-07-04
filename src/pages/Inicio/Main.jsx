@@ -11,6 +11,16 @@ import ServiceImg1 from "../../assets/img/servicios-uno.webp"
 import ServiceImg2 from "../../assets/img/servicios-dos.webp"
 import ServiceImg3 from "../../assets/img/servicios-tres.webp"
 import ServiceImg4 from "../../assets/img/servicios-cuatro.webp"
+import TestimonialImg1 from "../../assets/img/opinion-uno.webp"
+import TestimonialImg2 from "../../assets/img/opinion-dos.webp"
+import TestimonialImg3 from "../../assets/img/opinion-tres.webp"
+import TestimonialImg4 from "../../assets/img/opinion4.webp"
+import TestimonialImg5 from "../../assets/img/opinion5.webp"
+import TestimonialImg6 from "../../assets/img/opinion6.webp"
+import FaqsImg from "../../assets/img/dudas-frecuentes.webp"
+import FooterImg from "../../assets/img/fondo-contacto.webp"
+import FooterImg2 from "../../assets/img/estudiante-contacto.webp"
+import PlaneImg from "../../assets/icons/plane.svg"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -303,7 +313,7 @@ const Main = () => {
                     <div className="processes__texts center container">
                         <span className="processes__guide guide">Nuestros Procesos</span>
                         <h2 className="processes__title title">
-                            <span className="one">¿Cómo logramos </span>
+                            <span className="one">¿Cómo logramos</span>
                             <span className="three">el éxito?</span>
                         </h2>
                         <p className="processes__paragraph paragraph">
@@ -316,7 +326,7 @@ const Main = () => {
                         <div className="processes__background">
                             <img
                                 className="img"
-                                src="./assets/icons/plane.svg"
+                                src={PlaneImg}
                                 alt=""
                                 loading="lazy"
                                 aria-hidden="true"
@@ -355,6 +365,7 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
+
                 <section className="video">
                     <div className="video__content container">
                         <div className="video__container-img">
@@ -427,7 +438,7 @@ const Main = () => {
                                 },
                             }}
                             modules={[Autoplay, Pagination, Navigation]}
-                            className="mySwiper "
+                            className="mySwiper"
                         >
                             <SwiperSlide>
                                 <article className="service">
@@ -570,14 +581,13 @@ const Main = () => {
                                 </article>
                             </SwiperSlide>
                         </Swiper>
-
                     </div>
                 </section>
                 <section className="opinions">
                     <div className="opinions__content container">
                         <div className="opinions__texts center">
                             <h2 className="opinions__title title">
-                                <span className="one">¿Qué dicen</span>
+                                <span className="one">¿Qué dicen </span>
                                 <span className="three">Nuestros Clientes?</span>
                             </h2>
                             <p className="opinions__paragraph paragraph">
@@ -585,65 +595,92 @@ const Main = () => {
                                 nuestro compromiso y dedicación en cada proyecto.
                             </p>
                         </div>
-                        <div className="opinions__group">
-                            <div className="opinions__slider">
-                                <figure className="opinions__figure">
-                                    <img
-                                        className="opinions__img"
-                                        src="./assets/img/opinion-uno.webp"
-                                        loading="lazy"
-                                        alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
-                                    />
-                                </figure>
-                                <figure className="opinions__figure">
-                                    <img
-                                        className="opinions__img"
-                                        src="./assets/img/opinion-dos.webp"
-                                        loading="lazy"
-                                        alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
-                                    />
-                                </figure>
-                                <figure className="opinions__figure">
-                                    <img
-                                        className="opinions__img"
-                                        src="./assets/img/opinion-tres.webp"
-                                        loading="lazy"
-                                        alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
-                                    />
-                                </figure>
-                                <figure className="opinions__figure">
-                                    <img
-                                        className="opinions__img"
-                                        src="./assets/img/opinion-cuatro.webp"
-                                        loading="lazy"
-                                        alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
-                                    />
-                                </figure>
-                            </div>
-                            <button className="opinions__btn">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={16}
-                                    height={16}
-                                    fill="currentColor"
-                                    className="bi bi-caret-right-fill"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                            </button>
-                            <button className="opinions__btn">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width={16}
-                                    height={16}
-                                    fill="currentColor"
-                                    className="bi bi-caret-right-fill"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                            </button>
+                        <div className="opinions__group ">
+                            <Swiper className="opinions__slider mySwiper" spaceBetween={10}
+                                loop={true}
+                                autoplay={{
+                                    delay: 2500,
+                                }}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                navigation={true}
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    768: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 40,
+                                    },
+                                    1024: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 50,
+                                    },
+                                }}
+                                modules={[Autoplay, Pagination, Navigation]}>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg1}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg2}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg3}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg4}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg5}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <figure className="opinions__figure">
+                                        <img
+                                            className="opinions__img"
+                                            src={TestimonialImg6}
+                                            loading="lazy"
+                                            alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
+                                        />
+                                    </figure>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                     </div>
                 </section>
@@ -653,7 +690,7 @@ const Main = () => {
                             <figure className="faqs__figure">
                                 <img
                                     className="faqs__img"
-                                    src="./assets/img/dudas-frecuentes.webp"
+                                    src={FaqsImg}
                                     loading="lazy"
                                     alt="Dos personas consultando algo en sus tabletas"
                                 />
@@ -694,53 +731,59 @@ const Main = () => {
                             <div className="faqs__container">
                                 <details className="faq" name="faq">
                                     <summary className="faq__title">
-                                        ¿Cómo funciona el servicio?
+                                        ¿Cómo se realizaran las asesorías?
                                     </summary>
                                     <p className="faq__paragraph paragraph">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-                                        eveniet quia, ad perspiciatis voluptatibus dolor excepturi
-                                        perferendis repellendus culpa? Fuga esse corporis illo totam rerum
-                                        perspiciatis rem necessitatibus provident accusantium?
+                                        Tenemos un plan personalizado de asesorías para cada alumno dependiendo de sus necesidades.
+                                        Podemos ayudarte con tu proyecto desde cero o retomarlo desde donde lo tengas.
+                                        <br />
+                                        - Plan Básico: 30 minutos.
+                                        <br />
+                                        - Plan Premium: 45 minutos
+                                        <br />
+                                        - Plan Gold: 60 minutos.
+                                        <br />
+                                        Todos cuentan con un profesional especializado en tu área de estudio y Correo electrónico con sugerencias.
                                     </p>
                                 </details>
                                 <details className="faq" name="faq">
-                                    <summary className="faq__title">¿Qué incluye el servicio?</summary>
+                                    <summary className="faq__title">¿Por qué elegirnos para hacer tu Tesis?</summary>
                                     <p className="faq__paragraph paragraph">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-                                        eveniet quia, ad perspiciatis voluptatibus dolor excepturi
-                                        perferendis repellendus culpa? Fuga esse corporis illo totam rerum
-                                        perspiciatis rem necessitatibus provident accusantium?
+                                        Realizamos entregas y pagos parciales, nunca solicitamos el monto total por adelantado. 
+                                        Trabajamos por presentaciones para que puedas revisar y presentar avances a tu tutor. <br />
+                                        Usamos un avanzado software anti plagio y con cada entrega proporcionamos un informe de plagio. 
+                                        Nos adaptamos a cualquier etapa de tu proyecto y ofrecemos precios justos, sin costos excesivos.
+
                                     </p>
                                 </details>
                                 <details className="faq" name="faq">
                                     <summary className="faq__title">
-                                        ¿Cuánto tiempo toma el proceso?
+                                        ¿Por qué elegirnos para tu Artículo Científico?
                                     </summary>
                                     <p className="faq__paragraph paragraph">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-                                        eveniet quia, ad perspiciatis voluptatibus dolor excepturi
-                                        perferendis repellendus culpa? Fuga esse corporis illo totam rerum
-                                        perspiciatis rem necessitatibus provident accusantium?
+                                        En nuestra consultora, nos enfocamos en brindar soluciones efectivas a los problemas y desafíos que enfrentan nuestros clientes, nosotros vamos directo al asunto.
+                                        Ofrecemos servicios personalizados y adaptados a las necesidades específicas de cada tesista, garantizando un servicio confidencial y de alta calidad.
+                                        No estamos para hacerte perder el tiempo, realizamos tu Artículo Científico hasta que tu jurado lo apruebe.
                                     </p>
                                 </details>
                                 <details className="faq" name="faq">
-                                    <summary className="faq__title">¿Qué garantías ofrecemos?</summary>
+                                    <summary className="faq__title">¿Por qué confiarnos tu Ensayo?</summary>
                                     <p className="faq__paragraph paragraph">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-                                        eveniet quia, ad perspiciatis voluptatibus dolor excepturi
-                                        perferendis repellendus culpa? Fuga esse corporis illo totam rerum
-                                        perspiciatis rem necessitatibus provident accusantium?
+                                        Nuestros expertos poseen licenciaturas, maestrías o doctorados en diversas áreas de estudio, lo que respalda tu proyecto de Ensayo con un sólido conocimiento teórico y práctico.
+                                        Además, nos comprometemos a elaborar tu trabajo académico con calidad y dedicación, asignando un especialista en tu campo para asegurar el mejor resultado posible.
+                                        También te proporcionamos asistencia personalizada a través de un asesor educativo especializado en tu área de estudio, manteniendo una comunicación directa a través de nuestra plataforma.
+                                        Puedes confiar plenamente en nosotros para la elaboración de tu ensayo, con Tesis Vip tienes una aprobación asegurada.
                                     </p>
                                 </details>
                                 <details className="faq" name="faq">
                                     <summary className="faq__title">
-                                        ¿Cómo aseguramos la calidad?
+                                        ¿Por qué nosotros para tu Monografía?
                                     </summary>
                                     <p className="faq__paragraph paragraph">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam
-                                        eveniet quia, ad perspiciatis voluptatibus dolor excepturi
-                                        perferendis repellendus culpa? Fuga esse corporis illo totam rerum
-                                        perspiciatis rem necessitatibus provident accusantium?
+                                        En primer lugar, nuestro servicio es 100% confidencial y seguro, tu tranquilidad es muy importante para nosotros.
+                                        Además, contamos con un equipo de asesores especialistas en Monografía Científica, dispuestos a responder todas tus dudas durante el proceso del desarrollo.
+
+                                        Somos los únicos que contamos con la licencia de para de nuestro software facilitaremos el informe anti plagio y garantizarte que su Monografía es único.
                                     </p>
                                 </details>
                             </div>
@@ -751,8 +794,8 @@ const Main = () => {
                     <div className="contact__background background">
                         <img
                             className="img"
-                            src="./assets/img/fondo-contacto.webp"
-                            alt=""
+                            src={FooterImg}
+                            alt="Fondo"
                             loading="lazy"
                             aria-hidden="true"
                             role="presentation"
@@ -762,8 +805,8 @@ const Main = () => {
                         <div className="contact__img">
                             <img
                                 className="img"
-                                src="./assets/img/estudiante-contacto.webp"
-                                alt=""
+                                src={FooterImg2}
+                                alt="Estudiante"
                                 loading="lazy"
                                 aria-hidden="true"
                                 role="presentation"
@@ -815,7 +858,7 @@ const Main = () => {
                                     </span>
                                     <div className="contact__text">
                                         <p className="contact__name paragraph">Celular</p>
-                                        <p className="contact__data paragraph">+51 901 724 896</p>
+                                        <p className="contact__data paragraph">+51 921 777 947</p>
                                     </div>
                                 </li>
                                 <li className="contact__item">

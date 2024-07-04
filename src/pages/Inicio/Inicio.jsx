@@ -1,6 +1,40 @@
+import React from 'react';
 import Navbar from "../../components/Navbar/Navbar"
 import Main from "./Main"
+import axios from 'axios';
+import toast, { Toaster } from "react-hot-toast";
+import Footer from "../../components/Footer/Footer"
+
 const Inicio = () => {
+    const [formData, setFormData] = React.useState({
+        nombres: "",
+        correo: "",
+        titulo: "",
+        revista: "",
+    });
+
+    const notifySuccess = () => toast.success("Enviado correctamente");
+    const notifyError = () => toast.error("Por favor, completa todos los campos");
+
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await axios.post("https://formspree.io/f/xkgwnzlk", formData);
+            notifySuccess();
+            setFormData({
+                nombres: "",
+                carrera: "",
+                celular: "",
+                servicio: "",
+                mensaje: ""
+                
+            });
+        } catch (error) {
+            notifyError();
+            console.error("Error sending form data:", error);
+        }
+    };
     return (
         <>
             <header className="hero hero--home">
@@ -19,9 +53,21 @@ const Inicio = () => {
                             <p className="form__paragraph paragraph">
                                 Completa el formulario de contacto para comunicarte con nosotros
                             </p>
-                            <form className="form__form" action="" method="post">
-                                <input className="form__input" type="text" placeholder="Nombres" />
-                                <select className="form__input form__input--select">
+                            <form className="form__form" onSubmit={handleFormSubmit}>
+                                <input className="form__input" type="text" placeholder="Nombres" value={formData.nombres}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            nombres: e.target.value,
+                                        }))
+                                    } />
+                                <select className="form__input form__input--select" value={formData.carrera}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            carrera: e.target.value,
+                                        }))
+                                    }>
                                     <option value="" selected="" disabled="">
                                         Seleccione una carrera
                                     </option>
@@ -38,8 +84,20 @@ const Inicio = () => {
                                     <option value="carreras-tecnicas">Carreras Técnicas</option>
                                     <option value="otros">Otros</option>
                                 </select>
-                                <input className="form__input" type="tel" placeholder="Celular" />
-                                <select className="form__input form__input--select">
+                                <input className="form__input" type="tel" placeholder="Celular"  value={formData.celular}
+                              onChange={(e) =>
+                                setFormData((prevData) => ({
+                                  ...prevData,
+                                  celular: e.target.value,
+                                }))
+                              }/>
+                                <select className="form__input form__input--select"  value={formData.servicio}
+                              onChange={(e) =>
+                                setFormData((prevData) => ({
+                                  ...prevData,
+                                  servicio: e.target.value,
+                                }))
+                              }>
                                     <option value="" selected="" disabled="">
                                         Seleccione un servicio
                                     </option>
@@ -58,6 +116,13 @@ const Inicio = () => {
                                     className="form__input form__input--textarea"
                                     placeholder="Escribe tu mensaje aquí"
                                     defaultValue={""}
+                                    value={formData.mensaje}
+                                    onChange={(e) =>
+                                      setFormData((prevData) => ({
+                                        ...prevData,
+                                        mensaje: e.target.value,
+                                      }))
+                                    }
                                 />
                                 <input
                                     className="form__input form__input--submit"
@@ -69,7 +134,9 @@ const Inicio = () => {
                     </div>
                 </section>
             </header>
+            <Toaster />
             <Main />
+            <Footer />
         </>
     )
 }
