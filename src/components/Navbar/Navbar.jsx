@@ -1,4 +1,5 @@
 import Logo from "../../assets/img/logo.webp"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -119,114 +120,58 @@ const Navbar = () => {
                 </div>
             </nav>
             <nav className="navbar container">
-                <a className="navbar__logo" href="/">
-                    <img
-                        className="navbar__img"
-                        src={Logo}
-                        alt="Logo de Tesis Vip"
-                    />
-                </a>
+                <Link className="navbar__logo" to="/Inicio">
+                    <img className="navbar__img" src={Logo} alt="Logo de Tesis Vip" />
+                </Link>
                 <ul className="navbar__menu">
                     <li className="navbar__item">
-                        <a className="navbar__link" href="./index.html">
-                            Inicio
-                        </a>
+                        <Link className="navbar__link" to="/Inicio">Inicio</Link>
                     </li>
                     <li className="navbar__item navbar__item--submenu">
-                        <a className="navbar__link navbar__link--submenu" href="./servicios.html">
+                        <Link className="navbar__link navbar__link--submenu" to="/Servicios">
                             <span>Servicios</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={20}
-                                height={20}
-                                fill="currentColor"
-                                className="bi bi-chevron-down"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                                />
+                            <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                             </svg>
-                        </a>
+                        </Link>
                         <ul className="navbar__submenu">
                             <li className="navbar__item">
-                                <a className="navbar__link" href="./carreras.html">
-                                    Carreras
-                                </a>
+                                <Link className="navbar__link" to="/Carreras">Carreras</Link>
                             </li>
                             <li className="navbar__item">
-                                <a className="navbar__link" href="./stripe.html">
-                                    Pagos
-                                </a>
+                                <Link className="navbar__link" to="/Pagos">Pagos</Link>
                             </li>
                         </ul>
                     </li>
                     <li className="navbar__item navbar__item--submenu">
-                        <a
-                            className="navbar__link navbar__link--submenu"
-                            href="./sobre-nosotros.html"
-                        >
+                        <Link className="navbar__link navbar__link--submenu" to="/Nosotros">
                             <span>Nosotros</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={20}
-                                height={20}
-                                fill="currentColor"
-                                className="bi bi-chevron-down"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
-                                />
+                            <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                             </svg>
-                        </a>
+                        </Link>
                         <ul className="navbar__submenu">
                             <li className="navbar__item">
-                                <a className="navbar__link" href="./testimonios.html">
-                                    Testimonios
-                                </a>
+                                <Link className="navbar__link" to="/Testimonios">Testimonios</Link>
                             </li>
                         </ul>
                     </li>
                     <li className="navbar__item">
-                        <a className="navbar__link" href="./contacto.html">
-                            Contacto
-                        </a>
+                        <Link className="navbar__link" to="/Contacto">Contacto</Link>
                     </li>
                     <li className="navbar__item">
-                        <a className="navbar__link" href="./blog.html">
-                            Blog
-                        </a>
+                        <Link className="navbar__link" to="/Blog">Blog</Link>
                     </li>
                     <label className="navbar__label navbar__label--close" htmlFor="menu">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width={16}
-                            height={16}
-                            fill="currentColor"
-                            className="bi bi-x-lg icon-close"
-                            viewBox="0 0 16 16"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" className="bi bi-x-lg icon-close" viewBox="0 0 16 16">
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                         </svg>
                     </label>
                 </ul>
                 <label className="navbar__label" htmlFor="menu">
                     <input id="menu" className="navbar__checkbox" type="checkbox" />
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={16}
-                        height={16}
-                        fill="currentColor"
-                        className="bi bi-list icon-menu"
-                        viewBox="0 0 16 16"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-                        />
+                    <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" className="bi bi-list icon-menu" viewBox="0 0 16 16">
+                        <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                     </svg>
                 </label>
             </nav>

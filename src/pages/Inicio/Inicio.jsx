@@ -4,13 +4,15 @@ import Main from "./Main"
 import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
 import Footer from "../../components/Footer/Footer"
+import Button from "../../components/Button/Button"
 
 const Inicio = () => {
     const [formData, setFormData] = React.useState({
         nombres: "",
-        correo: "",
-        titulo: "",
-        revista: "",
+        carrera: "",
+        celular: "",
+        servicio: "",
+        mensaje: ""
     });
 
     const notifySuccess = () => toast.success("Enviado correctamente");
@@ -28,7 +30,7 @@ const Inicio = () => {
                 celular: "",
                 servicio: "",
                 mensaje: ""
-                
+
             });
         } catch (error) {
             notifyError();
@@ -39,6 +41,7 @@ const Inicio = () => {
         <>
             <header className="hero hero--home">
                 <Navbar />
+                <Button />
                 <section className="hero__main container">
                     <div className="hero__content">
                         <div className="hero__texts">
@@ -84,20 +87,20 @@ const Inicio = () => {
                                     <option value="carreras-tecnicas">Carreras Técnicas</option>
                                     <option value="otros">Otros</option>
                                 </select>
-                                <input className="form__input" type="tel" placeholder="Celular"  value={formData.celular}
-                              onChange={(e) =>
-                                setFormData((prevData) => ({
-                                  ...prevData,
-                                  celular: e.target.value,
-                                }))
-                              }/>
-                                <select className="form__input form__input--select"  value={formData.servicio}
-                              onChange={(e) =>
-                                setFormData((prevData) => ({
-                                  ...prevData,
-                                  servicio: e.target.value,
-                                }))
-                              }>
+                                <input className="form__input" type="tel" placeholder="Celular" value={formData.celular}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            celular: e.target.value,
+                                        }))
+                                    } />
+                                <select className="form__input form__input--select" value={formData.servicio}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            servicio: e.target.value,
+                                        }))
+                                    }>
                                     <option value="" selected="" disabled="">
                                         Seleccione un servicio
                                     </option>
@@ -118,10 +121,10 @@ const Inicio = () => {
                                     defaultValue={""}
                                     value={formData.mensaje}
                                     onChange={(e) =>
-                                      setFormData((prevData) => ({
-                                        ...prevData,
-                                        mensaje: e.target.value,
-                                      }))
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            mensaje: e.target.value,
+                                        }))
                                     }
                                 />
                                 <input

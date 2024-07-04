@@ -17,6 +17,23 @@
   --color-nine: #292929;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fbbb1e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -1090,6 +1107,7 @@ img {
 }
 
 .result__texts {
+  margin-top: 1rem;
   max-width: 250px;
   padding-inline: 1.5rem;
 }
@@ -2657,6 +2675,11 @@ img {
     border-radius: 1rem;
     backdrop-filter: blur(3px);
   }
+
+  .navbar__item--submenu:hover .navbar__submenu {
+    display: flex; /* Mostrar el submenú en hover */
+  }
+  
 
   .navbar__link {
     font-size: 1.05rem;

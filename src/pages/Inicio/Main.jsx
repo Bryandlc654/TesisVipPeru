@@ -11,6 +11,9 @@ import ServiceImg1 from "../../assets/img/servicios-uno.webp"
 import ServiceImg2 from "../../assets/img/servicios-dos.webp"
 import ServiceImg3 from "../../assets/img/servicios-tres.webp"
 import ServiceImg4 from "../../assets/img/servicios-cuatro.webp"
+import ServiceImg5 from "../../assets/img/asesora.webp"
+import ServiceImg6 from "../../assets/img/turnitin.webp"
+import ServiceImg7 from "../../assets/img/trabajos.webp"
 import TestimonialImg1 from "../../assets/img/opinion-uno.webp"
 import TestimonialImg2 from "../../assets/img/opinion-dos.webp"
 import TestimonialImg3 from "../../assets/img/opinion-tres.webp"
@@ -26,10 +29,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import './ProgressBar.css'
 
 const Main = () => {
     const iframeRef = useRef(null);
     const [isButtonVisible, setIsButtonVisible] = useState(true);
+    const [progress, setProgress] = useState(0);
+    const textRef = useRef(null);
+
+    const [clients, setClients] = useState(0);
+    const [projects, setProjects] = useState(0);
+    const [years, setYears] = useState(0);
+    const [recommendation, setRecommendation] = useState(0);
 
     useEffect(() => {
         const onYouTubeIframeAPIReady = () => {
@@ -58,6 +69,49 @@ const Main = () => {
             onYouTubeIframeAPIReady();
         }
     }, []);
+
+    useEffect(() => {
+        let start = null;
+        const duration = 5000; // Duración de la animación en milisegundos
+
+        const animateText = (timestamp) => {
+            if (!start) start = timestamp;
+            const progressTime = timestamp - start;
+            const percentage = Math.min(Math.floor((progressTime / duration) * 100), 100);
+            setProgress(percentage);
+
+            if (progressTime < duration) {
+                requestAnimationFrame(animateText);
+            }
+        };
+
+        requestAnimationFrame(animateText);
+    }, []);
+
+    useEffect(() => {
+        const animateValue = (setValue, targetValue, duration) => {
+            let start = null;
+
+            const step = (timestamp) => {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const value = Math.min(Math.floor((progress / duration) * targetValue), targetValue);
+                setValue(value);
+
+                if (progress < duration) {
+                    requestAnimationFrame(step);
+                }
+            };
+
+            requestAnimationFrame(step);
+        };
+
+        animateValue(setClients, 120, 2000); // 120 clientes en 2 segundos
+        animateValue(setProjects, 100, 2000); // 100% proyectos en 2 segundos
+        animateValue(setYears, 10, 2000); // 10 años en 2 segundos
+        animateValue(setRecommendation, 100, 2000); // 100% recomendado en 2 segundos
+    }, []);
+
 
 
     return (
@@ -268,9 +322,13 @@ const Main = () => {
                         </div>
                         <div className="results__group-two">
                             <article className="result">
-                                <div className="result__percentage result__percentage--one">
-                                    <p className="number">95%</p>
-                                </div>
+                                <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
+                                    <circle className="bg"></circle>
+                                    <circle className="fg"></circle>
+                                    <text x="50%" y="50%" textAnchor="middle" dy=".3em" className="number" ref={textRef}>
+                                        {progress}%
+                                    </text>
+                                </svg>
                                 <div className="result__texts">
                                     <p className="result__title">
                                         <strong>Satisfacción</strong>
@@ -281,9 +339,13 @@ const Main = () => {
                                 </div>
                             </article>
                             <article className="result">
-                                <div className="result__percentage result__percentage--two">
-                                    <p className="number">95%</p>
-                                </div>
+                                <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
+                                    <circle className="bg"></circle>
+                                    <circle className="fg"></circle>
+                                    <text x="50%" y="50%" textAnchor="middle" dy=".3em" className="number" ref={textRef}>
+                                        {progress}%
+                                    </text>
+                                </svg>
                                 <div className="result__texts">
                                     <p className="result__title">
                                         <strong>Cumplimiento</strong>
@@ -294,9 +356,13 @@ const Main = () => {
                                 </div>
                             </article>
                             <article className="result">
-                                <div className="result__percentage result__percentage--three">
-                                    <p className="number">98%</p>
-                                </div>
+                                <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
+                                    <circle className="bg"></circle>
+                                    <circle className="fg"></circle>
+                                    <text x="50%" y="50%" textAnchor="middle" dy=".3em" className="number" ref={textRef}>
+                                        {progress}%
+                                    </text>
+                                </svg>
                                 <div className="result__texts">
                                     <p className="result__title">
                                         <strong>Calidad</strong>
@@ -525,7 +591,7 @@ const Main = () => {
                                     <figure className="service__figure">
                                         <img
                                             className="service__img"
-                                            src={ServiceImg4}
+                                            src={ServiceImg6}
                                             loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
@@ -545,7 +611,7 @@ const Main = () => {
                                     <figure className="service__figure">
                                         <img
                                             className="service__img"
-                                            src={ServiceImg4}
+                                            src={ServiceImg5}
                                             loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
@@ -565,7 +631,7 @@ const Main = () => {
                                     <figure className="service__figure">
                                         <img
                                             className="service__img"
-                                            src={ServiceImg4}
+                                            src={ServiceImg7}
                                             loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
@@ -749,9 +815,9 @@ const Main = () => {
                                 <details className="faq" name="faq">
                                     <summary className="faq__title">¿Por qué elegirnos para hacer tu Tesis?</summary>
                                     <p className="faq__paragraph paragraph">
-                                        Realizamos entregas y pagos parciales, nunca solicitamos el monto total por adelantado. 
+                                        Realizamos entregas y pagos parciales, nunca solicitamos el monto total por adelantado.
                                         Trabajamos por presentaciones para que puedas revisar y presentar avances a tu tutor. <br />
-                                        Usamos un avanzado software anti plagio y con cada entrega proporcionamos un informe de plagio. 
+                                        Usamos un avanzado software anti plagio y con cada entrega proporcionamos un informe de plagio.
                                         Nos adaptamos a cualquier etapa de tu proyecto y ofrecemos precios justos, sin costos excesivos.
 
                                     </p>
@@ -952,7 +1018,7 @@ const Main = () => {
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
                                 </svg>
                             </span>
-                            <p className="info__text">+ 120</p>
+                            <p className="info__text">+ {clients}</p>
                             <p className="info__name">Clientes</p>
                         </div>
                         <div className="info__texts">
@@ -970,7 +1036,7 @@ const Main = () => {
                                     <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
                                 </svg>
                             </span>
-                            <p className="info__text">100%</p>
+                            <p className="info__text">{projects}%</p>
                             <p className="info__name">Proyectos Completados</p>
                         </div>
                         <div className="info__texts">
@@ -987,7 +1053,7 @@ const Main = () => {
                                     <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
                                 </svg>
                             </span>
-                            <p className="info__text">+ 10</p>
+                            <p className="info__text">+ {years}</p>
                             <p className="info__name">Años de Experiencia</p>
                         </div>
                         <div className="info__texts">
@@ -1003,7 +1069,7 @@ const Main = () => {
                                     <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
                                 </svg>
                             </span>
-                            <p className="info__text">100%</p>
+                            <p className="info__text">{recommendation}%</p>
                             <p className="info__name">Recomendado</p>
                         </div>
                     </div>
