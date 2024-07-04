@@ -69,8 +69,7 @@ const Inicio = () => {
                     </div>
                 </section>
             </header>
-            <Main/>
-
+            <Main />
         </>
     )
 }

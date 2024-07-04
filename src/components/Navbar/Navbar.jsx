@@ -1,4 +1,5 @@
 import Logo from "../../assets/img/logo.webp"
+
 const Navbar = () => {
     return (
         <>
@@ -6,7 +7,7 @@ const Navbar = () => {
                 <div className="data__content container">
                     <div className="data__animate">
                         <div className="data__texts">
-                            <p className="data__ruc">RUC 20123456789</p>
+                            <p className="data__ruc">RUC 20608518712</p>
                             <p className="data__name">TESIS VIP PROFESSIONALS CORPORATION</p>
                         </div>
                         <ul className="data__menu">

@@ -11,7 +11,11 @@ import ServiceImg1 from "../../assets/img/servicios-uno.webp"
 import ServiceImg2 from "../../assets/img/servicios-dos.webp"
 import ServiceImg3 from "../../assets/img/servicios-tres.webp"
 import ServiceImg4 from "../../assets/img/servicios-cuatro.webp"
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 const Main = () => {
     const iframeRef = useRef(null);
@@ -44,6 +48,8 @@ const Main = () => {
             onYouTubeIframeAPIReady();
         }
     }, []);
+
+
     return (
         <>
             <main>
@@ -395,80 +401,176 @@ const Main = () => {
                                 académico, garantizando calidad, confidencialidad y apoyo continuo.
                             </p>
                         </div>
-                        <div className="services__group">
-                            <article className="service">
-                                <figure className="service__figure">
-                                    <img
-                                        className="service__img"
-                                        src={ServiceImg1}
-                                        loading="lazy"
-                                        alt="Una joven mujer en una graduación de pie frente al escenario"
-                                    />
-                                </figure>
-                                <div className="service__texts">
-                                    <p className="service__title">
-                                        <strong>Redacción de Tesis de Pregrado</strong>
-                                    </p>
-                                    <a className="service__cta" href="https://wa.link/i003n2" target='_blank'>
-                                        Contratar
-                                    </a>
-                                </div>
-                            </article>
-                            <article className="service">
-                                <figure className="service__figure">
-                                    <img
-                                        className="service__img"
-                                        src={ServiceImg2}
-                                        loading="lazy"
-                                        alt="Un joven hombre con anteojos en una graduación de pie"
-                                    />
-                                </figure>
-                                <div className="service__texts">
-                                    <p className="service__title">
-                                        <strong>Redacción de Tesis de Postgrado</strong>
-                                    </p>
-                                    <a className="service__cta" href="https://wa.link/5nat26" target='_blank'>
-                                        Contratar
-                                    </a>
-                                </div>
-                            </article>
-                            <article className="service">
-                                <figure className="service__figure">
-                                    <img
-                                        className="service__img"
-                                        src={ServiceImg3}
-                                        loading="lazy"
-                                        alt="Un retrato elegante profesional de una mujer de negocios"
-                                    />
-                                </figure>
-                                <div className="service__texts">
-                                    <p className="service__title">
-                                        <strong>Levantamiento de Observaciones</strong>
-                                    </p>
-                                    <a className="service__cta" href="https://wa.link/ejdi2d" target='_blank'>
-                                        Contratar
-                                    </a>
-                                </div>
-                            </article>
-                            <article className="service">
-                                <figure className="service__figure">
-                                    <img
-                                        className="service__img"
-                                        src={ServiceImg4}
-                                        loading="lazy"
-                                        alt="Un abogado en un retrato profesional"
-                                    />
-                                </figure>
-                                <div className="service__texts">
-                                    <p className="service__title">
-                                        <strong>Parafraseo</strong>
-                                    </p>
-                                    <a className="service__cta" href="https://wa.link/bsqec9" target='_blank'>
-                                        Contratar
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
+
+                        <Swiper
+                            spaceBetween={10}
+                            loop={true}
+                            autoplay={{
+                                delay: 2500,
+                            }}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            navigation={true}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 40,
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 50,
+                                },
+                            }}
+                            modules={[Autoplay, Pagination, Navigation]}
+                            className="mySwiper "
+                        >
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg1}
+                                            loading="lazy"
+                                            alt="Una joven mujer en una graduación de pie frente al escenario"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Redacción de Tesis de Pregrado</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/i003n2" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg2}
+                                            loading="lazy"
+                                            alt="Un joven hombre con anteojos en una graduación de pie"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Redacción de Tesis de Postgrado</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/5nat26" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg3}
+                                            loading="lazy"
+                                            alt="Un retrato elegante profesional de una mujer de negocios"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Levantamiento de Observaciones</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/ejdi2d" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg4}
+                                            loading="lazy"
+                                            alt="Un abogado en un retrato profesional"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Parafraseo</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/bsqec9" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg4}
+                                            loading="lazy"
+                                            alt="Un abogado en un retrato profesional"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Revisión con Turnitin</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/0pbepd" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg4}
+                                            loading="lazy"
+                                            alt="Un abogado en un retrato profesional"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Asesoría de Tesis</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/3qfuz1" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <article className="service">
+                                    <figure className="service__figure">
+                                        <img
+                                            className="service__img"
+                                            src={ServiceImg4}
+                                            loading="lazy"
+                                            alt="Un abogado en un retrato profesional"
+                                        />
+                                    </figure>
+                                    <div className="service__texts">
+                                        <p className="service__title">
+                                            <strong>Redacción de Trabajos Universitarios</strong>
+                                        </p>
+                                        <a className="service__cta" href="https://wa.link/wjfg8a" target='_blank'>
+                                            Contratar
+                                        </a>
+                                    </div>
+                                </article>
+                            </SwiperSlide>
+                        </Swiper>
+
                     </div>
                 </section>
                 <section className="opinions">
