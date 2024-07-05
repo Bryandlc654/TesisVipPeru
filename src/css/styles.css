@@ -2677,9 +2677,10 @@ img {
   }
 
   .navbar__item--submenu:hover .navbar__submenu {
-    display: flex; /* Mostrar el submenú en hover */
+    display: flex;
+    /* Mostrar el submenú en hover */
   }
-  
+
 
   .navbar__link {
     font-size: 1.05rem;
