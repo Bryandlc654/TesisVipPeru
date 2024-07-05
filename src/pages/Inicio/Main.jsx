@@ -112,14 +112,12 @@ const Main = () => {
         animateValue(setRecommendation, 100, 2000); // 100% recomendado en 2 segundos
     }, []);
 
-
-
     return (
         <>
             <main>
                 <section className="benefits">
                     <div className="benefits__content container">
-                        <div className="benefits__texts">
+                        <div className="benefits__texts fade-in-left">
                             <span className="guide">Beneficios</span>
                             <h2 className="benefits__title title">
                                 <span className="one">¿Por qué elegir</span>
@@ -200,8 +198,8 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="promo">
-                    <div className="promo__content container">
+                <section className="promo ">
+                    <div className="promo__content container fade-in-fwd">
                         <div className="promo__group-call">
                             <div className="promo__icon">
                                 <svg
@@ -262,7 +260,7 @@ const Main = () => {
                                 />
                             </figure>
                         </div>
-                        <div className="about__texts">
+                        <div className="about__texts fade-in-right">
                             <span className="guide">Nosotros</span>
                             <h2 className="about__title title">
                                 <span className="one">¿Quiénes </span>
@@ -310,7 +308,7 @@ const Main = () => {
                         />
                     </div>
                     <div className="results__content container">
-                        <div className="results__group-one">
+                        <div className="results__group-one fade-in-left">
                             <span className="guide results__guide">Éxito garantizado</span>
                             <h2 className="results__title title">
                                 <span className="one">Resultados que </span>
@@ -321,7 +319,7 @@ const Main = () => {
                             </p>
                         </div>
                         <div className="results__group-two">
-                            <article className="result">
+                            <article className="result fade-in-fwd">
                                 <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
                                     <circle className="bg"></circle>
                                     <circle className="fg"></circle>
@@ -338,7 +336,7 @@ const Main = () => {
                                     </p>
                                 </div>
                             </article>
-                            <article className="result">
+                            <article className="result fade-in-fwd">
                                 <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
                                     <circle className="bg"></circle>
                                     <circle className="fg"></circle>
@@ -355,7 +353,7 @@ const Main = () => {
                                     </p>
                                 </div>
                             </article>
-                            <article className="result">
+                            <article className="result fade-in-fwd">
                                 <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
                                     <circle className="bg"></circle>
                                     <circle className="fg"></circle>
@@ -376,7 +374,7 @@ const Main = () => {
                     </div>
                 </section>
                 <section className="processes">
-                    <div className="processes__texts center container">
+                    <div className="processes__texts center container fade-in-fwd">
                         <span className="processes__guide guide">Nuestros Procesos</span>
                         <h2 className="processes__title title">
                             <span className="one">¿Cómo logramos</span>
@@ -388,7 +386,7 @@ const Main = () => {
                             satisfacción para todos nuestros clientes
                         </p>
                     </div>
-                    <div className="processes__group">
+                    <div className="processes__group fade-in-fwd">
                         <div className="processes__background">
                             <img
                                 className="img"
@@ -433,7 +431,7 @@ const Main = () => {
                 </section>
 
                 <section className="video">
-                    <div className="video__content container">
+                    <div className="video__content container fade-in-left">
                         <div className="video__container-img">
                             <iframe
                                 ref={iframeRef}
@@ -467,7 +465,7 @@ const Main = () => {
                 </section>
                 <section className="services">
                     <div className="services__content container">
-                        <div className="services__texts center">
+                        <div className="services__texts center fade-in-fwd">
                             <span className="services__guide guide">Lo que hacemos</span>
                             <h2 className="services__title title">
                                 <span className="one">Nuestros </span>
@@ -504,10 +502,10 @@ const Main = () => {
                                 },
                             }}
                             modules={[Autoplay, Pagination, Navigation]}
-                            className="mySwiper"
+                            className="mySwiper fade-in-fwd"
                         >
                             <SwiperSlide>
-                                <article className="service">
+                                <article className="service ">
                                     <figure className="service__figure">
                                         <img
                                             className="service__img"
@@ -651,7 +649,7 @@ const Main = () => {
                 </section>
                 <section className="opinions">
                     <div className="opinions__content container">
-                        <div className="opinions__texts center">
+                        <div className="opinions__texts center fade-in-fwd">
                             <h2 className="opinions__title title">
                                 <span className="one">¿Qué dicen </span>
                                 <span className="three">Nuestros Clientes?</span>
@@ -662,7 +660,7 @@ const Main = () => {
                             </p>
                         </div>
                         <div className="opinions__group ">
-                            <Swiper className="opinions__slider mySwiper" spaceBetween={10}
+                            <Swiper className="opinions__slider mySwiper fade-in-fwd" spaceBetween={10}
                                 loop={true}
                                 autoplay={{
                                     delay: 2500,
@@ -752,7 +750,7 @@ const Main = () => {
                 </section>
                 <section className="faqs">
                     <div className="faqs__content container">
-                        <div className="faqs__group">
+                        <div className="faqs__group fade-in-left">
                             <figure className="faqs__figure">
                                 <img
                                     className="faqs__img"
@@ -784,10 +782,10 @@ const Main = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="faqs__texts">
+                        <div className="faqs__texts fade-in-right">
                             <span className="faqs__guide guide">Preguntas comunes</span>
                             <h2 className="faqs__title title">
-                                <span className="one">Dudas</span>
+                                <span className="one">Dudas </span>
                                 <span className="three">Frecuentes</span>
                             </h2>
                             <p className="faqs__paragraph paragraph">
@@ -878,10 +876,10 @@ const Main = () => {
                                 role="presentation"
                             />
                         </div>
-                        <div className="contact__texts">
+                        <div className="contact__texts fade-in-left">
                             <span className="contact__guide guide">Déjanos tus datos</span>
                             <h2 className="contact__title title">
-                                <span className="one">Contáctanos</span>
+                                <span className="one">Contáctanos </span>
                                 <span className="three">Ahora</span>
                             </h2>
                             <p className="contact__paragraph paragraph">
@@ -947,7 +945,7 @@ const Main = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="form">
+                        <div className="form fade-in-right">
                             <p className="form__title">Contáctanos</p>
                             <p className="form__paragraph paragraph">
                                 Completa el formulario de contacto para comunicarte con nosotros
@@ -1003,8 +1001,8 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="info">
-                    <div className="info__content container">
+                <section className="info ">
+                    <div className="info__content container fade-in-fwd">
                         <div className="info__texts">
                             <span className="info__icon">
                                 <svg
