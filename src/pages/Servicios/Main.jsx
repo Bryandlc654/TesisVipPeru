@@ -11,7 +11,7 @@ const Main = () => {
       <main className="main">
         <section className="services service--page">
           <div className="services__content container">
-            <div className="services__texts center">
+            <div className="services__texts center fade-in-fwd">
               <span className="services__guide guide">Lo que hacemos</span>
               <h2 className="services__title title">
                 <span className="one">Nuestros </span>
@@ -26,7 +26,7 @@ const Main = () => {
         </section>
         <section className="services-group">
           <div className="services-group__content container">
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -76,7 +76,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -126,7 +126,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -176,7 +176,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -226,7 +226,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -276,7 +276,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service">
+            <div className="services-group__service fade-in-fwd">
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">

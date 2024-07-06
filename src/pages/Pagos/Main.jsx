@@ -4,7 +4,7 @@ const Main = () => {
         <>
             <main>
                 <section className="pay">
-                    <div className="pay__texts container center">
+                    <div className="pay__texts container center fade-in-fwd">
                         <span className="pay__guide guide">Medio de pago</span>
                         <h2 className="pay__title title">
                             <span className="one">Pago </span>

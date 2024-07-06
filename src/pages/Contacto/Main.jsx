@@ -6,7 +6,7 @@ const Main = () => {
             <main className="main">
                 <section className="info-contact">
                     <div className="info-contact__content container">
-                        <div className="info-contact__texts center">
+                        <div className="info-contact__texts center fade-in-fwd">
                             <span className="info-contact__guide guide">Medios de atención</span>
                             <h2 className="info-contact__title title">
                                 <span className="one">Información de </span>
@@ -18,7 +18,7 @@ const Main = () => {
                             </p>
                         </div>
                         <ul className="info-contact__group">
-                            <li className="info-contact__item">
+                            <li className="info-contact__item fade-in-right">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width={16}
@@ -36,7 +36,7 @@ const Main = () => {
                                     </p>
                                 </div>
                             </li>
-                            <li className="info-contact__item">
+                            <li className="info-contact__item fade-in-right-delay-two">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width={16}
@@ -52,7 +52,7 @@ const Main = () => {
                                     <p className="info-contact__info paragraph">+51 921 777 947</p>
                                 </div>
                             </li>
-                            <li className="info-contact__item">
+                            <li className="info-contact__item fade-in-right-delay-three">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width={16}
@@ -68,7 +68,7 @@ const Main = () => {
                                     <p className="info-contact__info paragraph">info@tesis-vip.com</p>
                                 </div>
                             </li>
-                            <li className="info-contact__item">
+                            <li className="info-contact__item fade-in-right-delay-four">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width={16}
@@ -92,7 +92,7 @@ const Main = () => {
                 </section>
                 <section className="form-contact">
                     <div className="form-contact__content container">
-                        <article className="form-contact__info">
+                        <article className="form-contact__info fade-in-left">
                             <div className="form-contact__icon">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const Main = () => {
                                 role="presentation"
                             />
                         </div>
-                        <div className="form">
+                        <div className="form fade-in-right">
                             <div className="form-contact__texts">
                                 <span className="form-contact__guide guide">Déjanos tus datos</span>
                                 <h2 className="form-contact__title title">

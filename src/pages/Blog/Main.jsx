@@ -6,7 +6,7 @@ const Main = () => {
             <main className="main">
                 <section className="blog">
                     <div className="blog__content container">
-                        <div className="blog__texts center">
+                        <div className="blog__texts center fade-in-fwd">
                             <span className="blog__guide guide">Consejos útiles</span>
                             <h2 className="blog__title title">
                                 <span className="one">Nuestro </span>
@@ -30,7 +30,7 @@ const Main = () => {
                             </div>
                         </div>
                         <div className="blog__articles">
-                            <article className="article">
+                            <article className="article fade-in-fwd">
                                 <figure className="article__figure" />
                                 <p className="article__category">Categoría</p>
                                 <div className="article__texts">

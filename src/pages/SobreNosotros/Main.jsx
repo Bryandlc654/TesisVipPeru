@@ -11,7 +11,7 @@ const Main = () => {
                 <section className="what-is">
                     <div className="what-is__content container">
                         <div className="what-is__principal">
-                            <div className="what-is__texts">
+                            <div className="what-is__texts fade-in-fwd">
                                 <span className="what-is__guide guide">Conoce</span>
                                 <h2 className="what-is__title title">
                                     <span className="one">¿Qué es </span>
@@ -29,7 +29,7 @@ const Main = () => {
                                 </div>
                             </div>
                             <div className="what-is__cards">
-                                <article className="what-is__card">
+                                <article className="what-is__card fade-in-right-delay-two">
                                     <span className="what-is__icon">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const Main = () => {
                                         </p>
                                     </div>
                                 </article>
-                                <article className="what-is__card">
+                                <article className="what-is__card fade-in-right-delay-three">
                                     <span className="what-is__icon what-is__icon--dark">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const Main = () => {
                                         </p>
                                     </div>
                                 </article>
-                                <article className="what-is__card">
+                                <article className="what-is__card fade-in-right-delay-four">
                                     <span className="what-is__icon">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -94,14 +94,14 @@ const Main = () => {
                             </div>
                         </div>
                         <div className="what-is__group">
-                            <figure className="what-is__figure">
+                            <figure className="what-is__figure fade-in-fwd">
                                 <img
                                     className="what-is__img"
                                     src={NosotrosImg1}
                                     alt="Grupo de estudiantes con batas de graduación celebrando, y en el aire hay confeti"
                                 />
                             </figure>
-                            <figure className="what-is__figure">
+                            <figure className="what-is__figure fade-in-fwd-delay-two">
                                 <img
                                     className="what-is__img"
                                     src={NosotrosImg2}
@@ -111,7 +111,7 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="about-company">
+                <section className="about-company fade-in-fwd">
                     <div className="about-company__content container">
                         <figure className="about-company__figure">
                             <img
@@ -240,7 +240,7 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="mission">
+                <section className="mission fade-in-fwd">
                     <div className="mission__content container">
                         <div className="mission__texts">
                             <span className="mission__guide guide">Nuestro propósito</span>
@@ -277,7 +277,7 @@ const Main = () => {
                         </figure>
                     </div>
                 </section>
-                <section className="vision">
+                <section className="vision fade-in-fwd">
                     <div className="vision__content container">
                         <figure className="vision__figure">
                             <img
@@ -319,27 +319,27 @@ const Main = () => {
                             <span className="three">Valores</span>
                         </h2>
                         <div className="values__group">
-                            <div className="value">
+                            <div className="value fade-in-fwd">
                                 <p className="value__number">1</p>
                                 <p className="value__name paragraph">Profesionalismo</p>
                             </div>
-                            <div className="value">
+                            <div className="value fade-in-fwd-delay-two">
                                 <p className="value__number">2</p>
                                 <p className="value__name paragraph">Compromiso</p>
                             </div>
-                            <div className="value">
+                            <div className="value fade-in-fwd-delay-three">
                                 <p className="value__number">3</p>
                                 <p className="value__name paragraph">Calidad</p>
                             </div>
-                            <div className="value">
+                            <div className="value fade-in-fwd-delay-four">
                                 <p className="value__number">4</p>
                                 <p className="value__name paragraph">Innovación</p>
                             </div>
-                            <div className="value">
+                            <div className="value fade-in-fwd-delay-five">
                                 <p className="value__number">5</p>
                                 <p className="value__name paragraph">Confianza</p>
                             </div>
-                            <div className="value">
+                            <div className="value fade-in-fwd-delay-six">
                                 <p className="value__number">6</p>
                                 <p className="value__name paragraph">Responsabilidad</p>
                             </div>

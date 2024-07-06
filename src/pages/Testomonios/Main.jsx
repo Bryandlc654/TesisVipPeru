@@ -16,7 +16,7 @@ const Main = () => {
       <main className="main">
         <section className="opinions">
           <div className="opinions__content container">
-            <div className="opinions__texts center">
+            <div className="opinions__texts center fade-in-fwd">
               <span className="opinions__guide guide">Testimonios</span>
               <h2 className="opinions__title title">
                 <span className="one">Nuestros </span>
@@ -27,7 +27,7 @@ const Main = () => {
                 nuestro compromiso y dedicación en cada proyecto.
               </p>
             </div>
-            <div className="opinions__group">
+            <div className="opinions__group fade-in-fwd-delay-three">
               <Swiper className="opinions__slider mySwiper" spaceBetween={10}
                 loop={true}
                 autoplay={{

@@ -5,7 +5,7 @@ const Main = () => {
             <main className="main">
                 <section className="careers">
                     <div className="careers__content container">
-                        <div className="careers__texts center">
+                        <div className="careers__texts center fade-in-fwd">
                             <span className="careers__guide guide">Carreras</span>
                             <h2 className="careers__title title">
                                 <span className="one">Somos </span>
@@ -16,7 +16,7 @@ const Main = () => {
                                 como ciencias sociales, ingeniería, medicina y muchas más.
                             </p>
                         </div>
-                        <div className="careers__group">
+                        <div className="careers__group fade-in-left">
                             <article className="service service--careers">
                                 <figure className="service__figure" />
                                 <div className="service__texts">
@@ -120,7 +120,7 @@ const Main = () => {
                 </section>
                 <section className="how">
                     <div className="how__content container">
-                        <div className="how__texts center">
+                        <div className="how__texts center fade-in-fwd">
                             <span className="how__guide guide">Nuestros procesos</span>
                             <h2 className="how__title title">
                                 <span className="one">¿Cómo</span>
@@ -132,7 +132,7 @@ const Main = () => {
                                 satisfacción para todos nuestros clientes
                             </p>
                         </div>
-                        <div className="how__group">
+                        <div className="how__group fade-in-left">
                             <div className="how__item">
                                 <p className="how__item-number">01</p>
                                 <p className="how__item-paragraph paragraph">

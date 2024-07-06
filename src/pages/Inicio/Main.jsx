@@ -30,9 +30,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import './ProgressBar.css'
+import { useInView } from 'react-intersection-observer';
+
 
 const Main = () => {
-    const iframeRef = useRef(null);
+    const videoRef = useRef(null);
     const [isButtonVisible, setIsButtonVisible] = useState(true);
     const [progress, setProgress] = useState(0);
     const textRef = useRef(null);
@@ -43,31 +45,11 @@ const Main = () => {
     const [recommendation, setRecommendation] = useState(0);
 
     useEffect(() => {
-        const onYouTubeIframeAPIReady = () => {
-            new window.YT.Player(iframeRef.current, {
-                events: {
-                    onReady: onPlayerReady,
-                },
-            });
-        };
-
-        const onPlayerReady = (event) => {
-            const customPlayBtn = document.getElementById('custom-play-btn');
-            customPlayBtn.addEventListener('click', () => {
-                event.target.playVideo();
-                setIsButtonVisible(false);
-            });
-        };
-
-        if (!window.YT) {
-            const tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-            window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-        } else {
-            onYouTubeIframeAPIReady();
-        }
+        const customPlayBtn = document.getElementById('custom-play-btn');
+        customPlayBtn.addEventListener('click', () => {
+            videoRef.current.play();
+            setIsButtonVisible(false);
+        });
     }, []);
 
     useEffect(() => {
@@ -112,12 +94,61 @@ const Main = () => {
         animateValue(setRecommendation, 100, 2000); // 100% recomendado en 2 segundos
     }, []);
 
+    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc8MeRef, inView: Secc8MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc9MeRef, inView: Secc9MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc10MeRef, inView: Secc10MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc11MeRef, inView: Secc11MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc12MeRef, inView: Secc12MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc13MeRef, inView: Secc13MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc14MeRef, inView: Secc14MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc15MeRef, inView: Secc15MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc16MeRef, inView: Secc16MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+
     return (
         <>
             <main>
                 <section className="benefits">
                     <div className="benefits__content container">
-                        <div className="benefits__texts fade-in-left">
+                        <div className={`benefits__texts hidden ${Secc1MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc1MeRef}>
                             <span className="guide">Beneficios</span>
                             <h2 className="benefits__title title">
                                 <span className="one">¿Por qué elegir</span>
@@ -158,7 +189,7 @@ const Main = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="benefits__list">
+                        <div className={`benefits__list hidden ${Secc2MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc2MeRef}>
                             <article className="benefit">
                                 <div className="benefit__content">
                                     <p className="benefit__number"><img src={N1} alt="" /></p>
@@ -198,8 +229,8 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="promo ">
-                    <div className="promo__content container fade-in-fwd">
+                <section className="promo">
+                    <div className={`promo__content container hidden ${Secc3MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc3MeRef}>
                         <div className="promo__group-call">
                             <div className="promo__icon">
                                 <svg
@@ -233,8 +264,8 @@ const Main = () => {
                     </div>
                 </section>
                 <section className="about">
-                    <div className="about__content container">
-                        <div className="about__images">
+                    <div className="about__content container" >
+                        <div className={`about__images hidden ${Secc4MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc4MeRef}>
                             <figure className="about__figure about__figure--one">
                                 <img
                                     className="about__img"
@@ -260,7 +291,7 @@ const Main = () => {
                                 />
                             </figure>
                         </div>
-                        <div className="about__texts fade-in-right">
+                        <div className={`about__texts hidden ${Secc5MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc5MeRef}>
                             <span className="guide">Nosotros</span>
                             <h2 className="about__title title">
                                 <span className="one">¿Quiénes </span>
@@ -308,7 +339,7 @@ const Main = () => {
                         />
                     </div>
                     <div className="results__content container">
-                        <div className="results__group-one fade-in-left">
+                        <div className={`results__group-one hidden ${Secc6MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc6MeRef}>
                             <span className="guide results__guide">Éxito garantizado</span>
                             <h2 className="results__title title">
                                 <span className="one">Resultados que </span>
@@ -318,8 +349,8 @@ const Main = () => {
                                 Demuestran nuestro compromiso con cada cliente
                             </p>
                         </div>
-                        <div className="results__group-two">
-                            <article className="result fade-in-fwd">
+                        <div className={`results__group-two hidden ${Secc7MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc7MeRef}>
+                            <article className="result">
                                 <svg width="120" height="100" viewBox="0 0 250 250" className="circular-progress">
                                     <circle className="bg"></circle>
                                     <circle className="fg"></circle>
@@ -374,7 +405,7 @@ const Main = () => {
                     </div>
                 </section>
                 <section className="processes">
-                    <div className="processes__texts center container fade-in-fwd">
+                    <div className={`processes__texts center container hidden ${Secc8MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc8MeRef}>
                         <span className="processes__guide guide">Nuestros Procesos</span>
                         <h2 className="processes__title title">
                             <span className="one">¿Cómo logramos</span>
@@ -386,7 +417,7 @@ const Main = () => {
                             satisfacción para todos nuestros clientes
                         </p>
                     </div>
-                    <div className="processes__group fade-in-fwd">
+                    <div className={`processes__group hidden ${Secc9MeInView ? 'scale-in-bl' : 'fade-in'}`} ref={Secc9MeRef}>
                         <div className="processes__background">
                             <img
                                 className="img"
@@ -431,19 +462,16 @@ const Main = () => {
                 </section>
 
                 <section className="video">
-                    <div className="video__content container fade-in-left">
+                    <div className={`video__content container hidden ${Secc10MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc10MeRef}>
                         <div className="video__container-img">
-                            <iframe
-                                ref={iframeRef}
+                            <video
+                                ref={videoRef}
                                 className="video__img"
-                                src="https://www.youtube.com/embed/8HdyujrW_58?enablejsapi=1"
+                                src="/videos/tesis.mp4" // Asegúrate de que la ruta al video sea correcta
                                 title="¿Cómo lo hacemos? | Tesis vip Servicio de asesoría y redacción"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerPolicy="strict-origin-when-cross-origin"
-                                allowFullScreen
-                                id="youtube-video"
-                            ></iframe>
+                                controls={false} // Desactiva los controles predeterminados
+                                id="custom-video"
+                            ></video>
                         </div>
                         {isButtonVisible && (
                             <div className="video__group">
@@ -465,7 +493,7 @@ const Main = () => {
                 </section>
                 <section className="services">
                     <div className="services__content container">
-                        <div className="services__texts center fade-in-fwd">
+                        <div className={`services__texts center hidden ${Secc11MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc11MeRef}>
                             <span className="services__guide guide">Lo que hacemos</span>
                             <h2 className="services__title title">
                                 <span className="one">Nuestros </span>
@@ -649,7 +677,7 @@ const Main = () => {
                 </section>
                 <section className="opinions">
                     <div className="opinions__content container">
-                        <div className="opinions__texts center fade-in-fwd">
+                        <div className={`opinions__texts center hidden ${Secc12MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc12MeRef} >
                             <h2 className="opinions__title title">
                                 <span className="one">¿Qué dicen </span>
                                 <span className="three">Nuestros Clientes?</span>
@@ -750,7 +778,7 @@ const Main = () => {
                 </section>
                 <section className="faqs">
                     <div className="faqs__content container">
-                        <div className="faqs__group fade-in-left">
+                        <div className={`faqs__group hidden ${Secc13MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc13MeRef}>
                             <figure className="faqs__figure">
                                 <img
                                     className="faqs__img"
@@ -782,7 +810,7 @@ const Main = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="faqs__texts fade-in-right">
+                        <div className={`faqs__texts hidden ${Secc14MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc14MeRef}>
                             <span className="faqs__guide guide">Preguntas comunes</span>
                             <h2 className="faqs__title title">
                                 <span className="one">Dudas </span>
@@ -876,7 +904,7 @@ const Main = () => {
                                 role="presentation"
                             />
                         </div>
-                        <div className="contact__texts fade-in-left">
+                        <div className={`contact__texts hidden ${Secc15MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc15MeRef}>
                             <span className="contact__guide guide">Déjanos tus datos</span>
                             <h2 className="contact__title title">
                                 <span className="one">Contáctanos </span>
@@ -945,7 +973,7 @@ const Main = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="form fade-in-right">
+                        <div className={`form hidden ${Secc16MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc16MeRef}>
                             <p className="form__title">Contáctanos</p>
                             <p className="form__paragraph paragraph">
                                 Completa el formulario de contacto para comunicarte con nosotros
@@ -1002,7 +1030,7 @@ const Main = () => {
                     </div>
                 </section>
                 <section className="info ">
-                    <div className="info__content container fade-in-fwd">
+                    <div className={`info__content container hidden ${Secc13MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc13MeRef}>
                         <div className="info__texts">
                             <span className="info__icon">
                                 <svg
