@@ -1,0 +1,4 @@
+User-agent: *
+
+# Sitemap location
+Sitemap: https://tesis-vip.com/sitemap.xml

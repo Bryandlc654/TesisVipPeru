@@ -13,7 +13,7 @@ const Navbar = () => {
                         </div>
                         <ul className="data__menu">
                             <li className="data__item">
-                                <a className="data__link" href="" rel="noopener noreferrer">
+                                <a className="data__link" title="Ir a Facebook" href="https://www.facebook.com/TESISVIPasesoriaycapacitacion" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -27,7 +27,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li className="data__item">
-                                <a className="data__link" href="" rel="noopener noreferrer">
+                                <a className="data__link" title="Ir a Instagram" href="https://www.instagram.com/tesis_vip_asesoria/" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -41,7 +41,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li className="data__item">
-                                <a className="data__link" href="" rel="noopener noreferrer">
+                                <a className="data__link" title="Ir a Tik Tok" href="https://www.tiktok.com/@tesisvipasesorias" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -55,7 +55,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li className="data__item">
-                                <a className="data__link" href="" rel="noopener noreferrer">
+                                <a className="data__link" title="Ir a Linkedin" href="https://www.linkedin.com/company/tesis-vip/" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -69,7 +69,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li className="data__item">
-                                <a className="data__link" href="" rel="noopener noreferrer">
+                                <a className="data__link" title="Ir a Youtube" href="https://www.youtube.com/@tesisvip-asesoriamientoyca5851" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -85,7 +85,7 @@ const Navbar = () => {
                             <li className="data__item">
                                 <a
                                     className="data__link data__link-email"
-                                    href="mailto:info@tesis-vip.com"
+                                    href="mailto:info@tesis-vip.com" title="Enviar Correo"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"

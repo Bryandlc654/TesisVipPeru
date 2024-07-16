@@ -1,11 +1,27 @@
+import { useInView } from 'react-intersection-observer';
+import ServiceImg1 from '../../assets/img/economia.webp';
+import ServiceImg2 from '../../assets/img/salud.webp';
+import ServiceImg3 from '../../assets/img/administrador.webp';
+import ServiceImg4 from '../../assets/img/ingeniero.webp';
+import ServiceImg5 from '../../assets/img/agronomo.webp';
 
 const Main = () => {
+    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+
     return (
         <>
             <main className="main">
                 <section className="careers">
                     <div className="careers__content container">
-                        <div className="careers__texts center fade-in-fwd">
+                        <div className={`careers__texts center hidden ${Secc1MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc1MeRef}>
                             <span className="careers__guide guide">Carreras</span>
                             <h2 className="careers__title title">
                                 <span className="one">Somos </span>
@@ -16,9 +32,16 @@ const Main = () => {
                                 como ciencias sociales, ingeniería, medicina y muchas más.
                             </p>
                         </div>
-                        <div className="careers__group fade-in-left">
+                        <div className="careers__group">
                             <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg1}
+                                     
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -26,13 +49,21 @@ const Main = () => {
                                             <span>Sociales</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
+" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
                             </article>
                             <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg2}
+                                     
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -40,13 +71,20 @@ const Main = () => {
                                             <span>de la Salud</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
+" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
                             </article>
                             <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg3}
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -54,13 +92,20 @@ const Main = () => {
                                             <span>Empresariales</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
+" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
                             </article>
                             <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg4}
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -68,13 +113,20 @@ const Main = () => {
                                             <span>Arquitectura</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
+" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
                             </article>
                             <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg5}
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -82,27 +134,20 @@ const Main = () => {
                                             <span>y Agrónomas</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
+" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
                             </article>
                             <article className="service service--careers">
-                                <figure className="service__figure" />
-                                <div className="service__texts">
-                                    <p className="service__title">
-                                        <strong className="career-texts">
-                                            <span>Ciencias</span>
-                                            <span>Básicas</span>
-                                        </strong>
-                                    </p>
-                                    <a className="service__cta" href="#">
-                                        Contratar
-                                    </a>
-                                </div>
-                            </article>
-                            <article className="service service--careers">
-                                <figure className="service__figure" />
+                                <figure className="service__figure" >
+                                    <img
+                                        className="service__img"
+                                        src={ServiceImg3}
+                                        alt=""
+                                    />
+                                </figure>
                                 <div className="service__texts">
                                     <p className="service__title">
                                         <strong className="career-texts">
@@ -110,7 +155,7 @@ const Main = () => {
                                             <span>Técnicas</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="#">
+                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51921777947" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -120,11 +165,11 @@ const Main = () => {
                 </section>
                 <section className="how">
                     <div className="how__content container">
-                        <div className="how__texts center fade-in-fwd">
+                        <div className={`how__texts center hidden ${Secc3MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc3MeRef}>
                             <span className="how__guide guide">Nuestros procesos</span>
                             <h2 className="how__title title">
-                                <span className="one">¿Cómo</span>
-                                <span className="three">Trabajamos?</span>
+                                <span className="one">¿Cómo </span>
+                                <span className="three">Trabajamos?  </span>
                             </h2>
                             <p className="how__paragraph paragraph">
                                 Gracias a nuestros procesos detallados y meticulosos, garantizamos el
@@ -132,7 +177,7 @@ const Main = () => {
                                 satisfacción para todos nuestros clientes
                             </p>
                         </div>
-                        <div className="how__group fade-in-left">
+                        <div className="how__group">
                             <div className="how__item">
                                 <p className="how__item-number">01</p>
                                 <p className="how__item-paragraph paragraph">
@@ -238,8 +283,8 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="promo promo--careers">
-                    <div className="promo__content container">
+                <section className="promo promo--careers ">
+                    <div className={`promo__content container hidden ${Secc5MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc5MeRef}>
                         <div className="promo__group-call">
                             <div className="promo__icon">
                                 <svg
@@ -255,7 +300,7 @@ const Main = () => {
                             </div>
                             <p className="promo__number">
                                 <span className="text">Llama a Nuestros asesores</span>
-                                <span className="number">+51 921 777 947</span>
+                                <span className="number">+51 901 815 850     </span>
                             </p>
                         </div>
                         <p className="promo__paragraph paragraph">
@@ -265,7 +310,8 @@ const Main = () => {
                         </p>
                         <a
                             className="btn-dark btn-dark--promo"
-                            href="#"
+                            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1ST_cfzAXUmKy1YHXaKWXlgYYgropwbZcXo1SPR-jnE1WBrkB76Mj8YVsUmkmRbopBmMW8o4_k"
+                            target='_blank'
                             rel="noopener noreferrer"
                         >
                             Agendar ahora

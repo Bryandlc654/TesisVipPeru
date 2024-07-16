@@ -1,10 +1,9 @@
 import React from 'react';
-import Navbar from "../../components/Navbar/Navbar"
-import Main from "./Main"
-import axios from 'axios';
-import toast, { Toaster } from "react-hot-toast";
-import Footer from "../../components/Footer/Footer"
-import Button from "../../components/Button/Button"
+import Navbar from "../../components/Navbar/Navbar";
+import Main from "./Main";
+import Footer from "../../components/Footer/Footer";
+import Button from "../../components/Button/Button";
+import { useInView } from 'react-intersection-observer';
 
 const Inicio = () => {
     const [formData, setFormData] = React.useState({
@@ -15,28 +14,29 @@ const Inicio = () => {
         mensaje: ""
     });
 
-    const notifySuccess = () => toast.success("Enviado correctamente");
-    const notifyError = () => toast.error("Por favor, completa todos los campos");
-
-    const handleFormSubmit = async (e) => {
+    const handleFormSubmit = (e) => {
         e.preventDefault();
+        const { nombres, carrera, celular, servicio, mensaje } = formData;
 
-        try {
-            await axios.post("https://formspree.io/f/xkgwnzlk", formData);
-            notifySuccess();
+        if (nombres && carrera && celular && servicio && mensaje) {
+            const whatsappMessage = `Hola, soy ${nombres}, estudiante de ${carrera}. Me gustaría solicitar el servicio de ${servicio}. Mi número de celular es ${celular}. Mensaje adicional: ${mensaje}.`;
+            const whatsappURL = `https://wa.me/+51930443379?text=${encodeURIComponent(whatsappMessage)}`; // Reemplaza 51XXXXXXXXX con el número de WhatsApp de destino
+
+            window.open(whatsappURL, '_blank');
             setFormData({
                 nombres: "",
                 carrera: "",
                 celular: "",
                 servicio: "",
                 mensaje: ""
-
             });
-        } catch (error) {
-            notifyError();
-            console.error("Error sending form data:", error);
-        }
+        } 
     };
+
+    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+        threshold: 0,
+    });
+
     return (
         <>
             <header className="hero hero--home">
@@ -44,81 +44,95 @@ const Inicio = () => {
                 <Button />
                 <section className="hero__main container">
                     <div className="hero__content">
-                        <div className="hero__texts">
+                        <div className={`hero__texts hidden ${Secc1MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc1MeRef}>
                             <p className="hero__info">Aprobación Garantizada</p>
                             <h1 className="hero__title hero__title--home title">
                                 <span className="one">Redacción y Asesoría de Tesis</span>
                                 <span className="two">para Pregado y Postgrado</span>
                             </h1>
                         </div>
-                        <div className="form form--transparent">
+                        <div className={`form form--transparent hidden ${Secc1MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc1MeRef}>
                             <p className="form__title">Agenda una asesoría</p>
                             <p className="form__paragraph paragraph">
                                 Completa el formulario de contacto para comunicarte con nosotros
                             </p>
                             <form className="form__form" onSubmit={handleFormSubmit}>
-                                <input className="form__input" type="text" placeholder="Nombres" value={formData.nombres}
+                                <input
+                                    className="form__input"
+                                    type="text"
+                                    placeholder="Nombres"
+                                    value={formData.nombres}
                                     onChange={(e) =>
                                         setFormData((prevData) => ({
                                             ...prevData,
                                             nombres: e.target.value,
                                         }))
-                                    } />
-                                <select className="form__input form__input--select" value={formData.carrera}
+                                    }
+                                />
+                                <select
+                                    className="form__input form__input--select"
+                                    value={formData.carrera}
                                     onChange={(e) =>
                                         setFormData((prevData) => ({
                                             ...prevData,
                                             carrera: e.target.value,
                                         }))
-                                    }>
-                                    <option value="" selected="" disabled="">
+                                    }
+                                >
+                                    <option value="" disabled>
                                         Seleccione una carrera
                                     </option>
-                                    <option value="ciencias-sociales">Ciencias Sociales</option>
-                                    <option value="ciencias-de-la-salud">Ciencias de la Salud</option>
-                                    <option value="ciencias-empresariales">Ciencias Empresariales</option>
-                                    <option value="ingenierias-y-arquitectura">
+                                    <option value="Ciencias Sociales">Ciencias Sociales</option>
+                                    <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+                                    <option value="Ciencias Empresariales">Ciencias Empresariales</option>
+                                    <option value="Ingenierías y Arquitectura">
                                         Ingenierías y Arquitectura
                                     </option>
-                                    <option value="ciencias-biologicas-y-agronomas">
+                                    <option value="Ciencias Biológicas y Agrónomas">
                                         Ciencias Biológicas y Agrónomas
                                     </option>
-                                    <option value="ciencias-basicas">Ciencias Básicas</option>
-                                    <option value="carreras-tecnicas">Carreras Técnicas</option>
+                                    <option value="Carreras Técnicas">Carreras Técnicas</option>
                                     <option value="otros">Otros</option>
                                 </select>
-                                <input className="form__input" type="tel" placeholder="Celular" value={formData.celular}
+                                <input
+                                    className="form__input"
+                                    type="tel"
+                                    placeholder="Celular"
+                                    value={formData.celular}
                                     onChange={(e) =>
                                         setFormData((prevData) => ({
                                             ...prevData,
                                             celular: e.target.value,
                                         }))
-                                    } />
-                                <select className="form__input form__input--select" value={formData.servicio}
+                                    }
+                                />
+                                <select
+                                    className="form__input form__input--select"
+                                    value={formData.servicio}
                                     onChange={(e) =>
                                         setFormData((prevData) => ({
                                             ...prevData,
                                             servicio: e.target.value,
                                         }))
-                                    }>
-                                    <option value="" selected="" disabled="">
+                                    }
+                                >
+                                    <option value="" disabled>
                                         Seleccione un servicio
                                     </option>
-                                    <option value="redaccion-tesis-pregrado">
+                                    <option value="Redacción de Tesis de Pregrado">
                                         Redacción de Tesis de Pregrado
                                     </option>
-                                    <option value="redaccion-tesis-postgrado">
+                                    <option value="Redacción de Tesis de Postgrado">
                                         Redacción de Tesis de Postgrado
                                     </option>
-                                    <option value="levantamiento-observaciones">
+                                    <option value="Levantamiento de Observaciones">
                                         Levantamiento de Observaciones
                                     </option>
-                                    <option value="parafraseo">Parafraseo</option>
+                                    <option value="Parafraseo">Parafraseo</option>
                                 </select>
                                 <textarea
                                     className="form__input form__input--textarea"
                                     placeholder="Escribe tu mensaje aquí"
-                                    defaultValue={""}
                                     value={formData.mensaje}
                                     onChange={(e) =>
                                         setFormData((prevData) => ({
@@ -130,18 +144,17 @@ const Inicio = () => {
                                 <input
                                     className="form__input form__input--submit"
                                     type="submit"
-                                    defaultValue="Enviar"
+                                    value="Enviar"
                                 />
                             </form>
                         </div>
                     </div>
                 </section>
             </header>
-            <Toaster />
             <Main />
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default Inicio
+export default Inicio;

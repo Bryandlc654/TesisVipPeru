@@ -3,15 +3,47 @@ import NosotrosImg2 from "../../assets/img/sobre-nosotros-dos.webp"
 import NosotrosImg3 from "../../assets/img/sobre-la-empresa.webp"
 import NosotrosImg4 from "../../assets/img/sobre-nosotros-vision.webp"
 import NosotrosImg5 from "../../assets/img/sobre-nosotros-mision.webp"
+import { useInView } from 'react-intersection-observer';
 
 const Main = () => {
+    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc8MeRef, inView: Secc8MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc9MeRef, inView: Secc9MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+    const { ref: Secc10MeRef, inView: Secc10MeInView } = useInView({
+        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    });
+
     return (
         <>
             <main className="main">
                 <section className="what-is">
                     <div className="what-is__content container">
                         <div className="what-is__principal">
-                            <div className="what-is__texts fade-in-fwd">
+                            <div className={`what-is__texts hidden ${Secc1MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc1MeRef}>
                                 <span className="what-is__guide guide">Conoce</span>
                                 <h2 className="what-is__title title">
                                     <span className="one">¿Qué es </span>
@@ -28,8 +60,8 @@ const Main = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="what-is__cards">
-                                <article className="what-is__card fade-in-right-delay-two">
+                            <div className={`what-is__cards hidden ${Secc2MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc2MeRef}>
+                                <article className="what-is__card">
                                     <span className="what-is__icon">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +81,7 @@ const Main = () => {
                                         </p>
                                     </div>
                                 </article>
-                                <article className="what-is__card fade-in-right-delay-three">
+                                <article className="what-is__card">
                                     <span className="what-is__icon what-is__icon--dark">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +102,7 @@ const Main = () => {
                                         </p>
                                     </div>
                                 </article>
-                                <article className="what-is__card fade-in-right-delay-four">
+                                <article className="what-is__card">
                                     <span className="what-is__icon">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -93,15 +125,15 @@ const Main = () => {
                                 </article>
                             </div>
                         </div>
-                        <div className="what-is__group">
-                            <figure className="what-is__figure fade-in-fwd">
+                        <div className={`what-is__group hidden ${Secc3MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc3MeRef}>
+                            <figure className="what-is__figure">
                                 <img
                                     className="what-is__img"
                                     src={NosotrosImg1}
                                     alt="Grupo de estudiantes con batas de graduación celebrando, y en el aire hay confeti"
                                 />
                             </figure>
-                            <figure className="what-is__figure fade-in-fwd-delay-two">
+                            <figure className="what-is__figure">
                                 <img
                                     className="what-is__img"
                                     src={NosotrosImg2}
@@ -111,9 +143,9 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="about-company fade-in-fwd">
+                <section className="about-company">
                     <div className="about-company__content container">
-                        <figure className="about-company__figure">
+                        <figure className={`about-company__figure hidden ${Secc4MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc4MeRef}>
                             <img
                                 className="about-company__img"
                                 src={NosotrosImg3}
@@ -121,7 +153,7 @@ const Main = () => {
                                 alt="Un hombre joven feliz mirando de frente"
                             />
                         </figure>
-                        <div className="about-company__texts">
+                        <div className={`about-company__texts hidden ${Secc5MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc5MeRef}>
                             <span className="about-company__guide guide">Nuestra historia</span>
                             <h2 className="about-company__title title">
                                 <span className="three">Sobre la empresa</span>
@@ -131,8 +163,11 @@ const Main = () => {
                                     <li>
                                         <a
                                             className="about-company__item"
-                                            href=""
+                                            href="https://www.facebook.com/TESISVIPasesoriaycapacitacion"
                                             rel="noopener noreferrer"
+                                            target="_blank"
+                                            title="TesisVIP Asesoría y Capacitación"
+
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +184,11 @@ const Main = () => {
                                     <li>
                                         <a
                                             className="about-company__item"
-                                            href=""
+                                            href="https://www.instagram.com/tesis_vip_asesoria/"
                                             rel="noopener noreferrer"
+                                            target="_blank"
+                                            title="TesisVIP Asesoría y Capacitación"
+
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -167,8 +205,11 @@ const Main = () => {
                                     <li>
                                         <a
                                             className="about-company__item"
-                                            href=""
+                                            href="https://www.tiktok.com/@tesisvipasesorias"
                                             rel="noopener noreferrer"
+                                            target="_blank"
+                                            title="TesisVIP Asesoría y Capacitación"
+
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -185,8 +226,10 @@ const Main = () => {
                                     <li>
                                         <a
                                             className="about-company__item"
-                                            href=""
+                                            href="https://www.youtube.com/@tesisvip-asesoriamientoyca5851"
                                             rel="noopener noreferrer"
+                                            target="_blank"
+                                            title="TesisVIP Asesoría y Capacitación"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -240,9 +283,9 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="mission fade-in-fwd">
+                <section className="mission">
                     <div className="mission__content container">
-                        <div className="mission__texts">
+                        <div className={`mission__texts hidden ${Secc6MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc6MeRef}>
                             <span className="mission__guide guide">Nuestro propósito</span>
                             <h2 className="mission__title title">
                                 <span className="three">Misión</span>
@@ -267,7 +310,7 @@ const Main = () => {
                                 </p>
                             </div>
                         </div>
-                        <figure className="mission__figure">
+                        <figure className={`mission__figure hidden ${Secc7MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc7MeRef}>
                             <img
                                 className="mission__img"
                                 src={NosotrosImg5}
@@ -277,9 +320,9 @@ const Main = () => {
                         </figure>
                     </div>
                 </section>
-                <section className="vision fade-in-fwd">
+                <section className="vision">
                     <div className="vision__content container">
-                        <figure className="vision__figure">
+                        <figure className={`vision__figure hidden ${Secc8MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc8MeRef}>
                             <img
                                 className="vision__img"
                                 src={NosotrosImg4}
@@ -287,7 +330,7 @@ const Main = () => {
                                 alt="Una estudiante con bata de graduación mirando de frente sonriendo"
                             />
                         </figure>
-                        <div className="vision__texts">
+                        <div className={`vision__texts hidden ${Secc9MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc9MeRef}>
                             <span className="vision__guide guide">Nuestro futuro</span>
                             <h2 className="vision__title title">
                                 <span className="three">Visión</span>
@@ -313,7 +356,7 @@ const Main = () => {
                     </div>
                 </section>
                 <section className="values">
-                    <div className="values__content container">
+                    <div className={`values__content container ${Secc10MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc10MeRef}>
                         <h2 className="values__title title">
                             <span className="one">Nuestros </span>
                             <span className="three">Valores</span>

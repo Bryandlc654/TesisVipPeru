@@ -9,14 +9,19 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useInView } from 'react-intersection-observer';
 
 const Main = () => {
+  const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+
   return (
     <>
       <main className="main">
         <section className="opinions">
           <div className="opinions__content container">
-            <div className="opinions__texts center fade-in-fwd">
+            <div className={`opinions__texts center hidden ${Secc1MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc1MeRef}>
               <span className="opinions__guide guide">Testimonios</span>
               <h2 className="opinions__title title">
                 <span className="one">Nuestros </span>

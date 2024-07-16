@@ -44,6 +44,7 @@ const Main = () => {
     const [years, setYears] = useState(0);
     const [recommendation, setRecommendation] = useState(0);
 
+
     useEffect(() => {
         const customPlayBtn = document.getElementById('custom-play-btn');
         customPlayBtn.addEventListener('click', () => {
@@ -94,54 +95,48 @@ const Main = () => {
         animateValue(setRecommendation, 100, 2000); // 100% recomendado en 2 segundos
     }, []);
 
-    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+    const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc8MeRef, inView: Secc8MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc10MeRef, inView: Secc10MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc11MeRef, inView: Secc11MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc12MeRef, inView: Secc12MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc13MeRef, inView: Secc13MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc14MeRef, inView: Secc14MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc15MeRef, inView: Secc15MeInView } = useInView({ threshold: 0 });
+    const { ref: Secc16MeRef, inView: Secc16MeInView } = useInView({ threshold: 0 });
+
+    const [formData, setFormData] = useState({
+        nombres: "",
+        carrera: "",
+        celular: "",
+        servicio: "",
+        mensaje: ""
     });
-    const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc8MeRef, inView: Secc8MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc9MeRef, inView: Secc9MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc10MeRef, inView: Secc10MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc11MeRef, inView: Secc11MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc12MeRef, inView: Secc12MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc13MeRef, inView: Secc13MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc14MeRef, inView: Secc14MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc15MeRef, inView: Secc15MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc16MeRef, inView: Secc16MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        const { nombres, carrera, celular, servicio, mensaje } = formData;
+
+        if (nombres && carrera && celular && servicio && mensaje) {
+            const whatsappMessage = `Hola, soy ${nombres}, estudiante de ${carrera}. Me gustaría solicitar el servicio de ${servicio}. Mi número de celular es ${celular}. Mensaje adicional: ${mensaje}.`;
+            const whatsappURL = `https://wa.me/+51930443379?text=${encodeURIComponent(whatsappMessage)}`; // Reemplaza 51XXXXXXXXX con el número de WhatsApp de destino
+
+            window.open(whatsappURL, '_blank');
+            setFormData({
+                nombres: "",
+                carrera: "",
+                celular: "",
+                servicio: "",
+                mensaje: ""
+            });
+        }
+    };
 
     return (
         <>
@@ -175,15 +170,16 @@ const Main = () => {
                                         </svg>
                                     </div>
                                     <p className="benefits__number">
-                                        <span className="number">+51 901 724 896</span>
+                                        <span className="number">+51 930 443 379</span>
                                         <span className="text">Whatsapp</span>
                                     </p>
                                 </div>
                                 <a
                                     className="btn-primary btn-primary--benefits"
-                                    href="https://wa.link/sf967w"
+                                    href="https://wa.link/70uspg"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    title='Contactar por Whatsapp'
                                 >
                                     Contáctanos
                                 </a>
@@ -246,7 +242,7 @@ const Main = () => {
                             </div>
                             <p className="promo__number">
                                 <span className="text">Llama a Nuestros asesores</span>
-                                <span className="number">+51 921 777 947</span>
+                                <span className="number">+51930443379</span>
                             </p>
                         </div>
                         <p className="promo__paragraph paragraph">
@@ -256,7 +252,8 @@ const Main = () => {
                         </p>
                         <a
                             className="btn-dark btn-dark--promo"
-                            href="#"
+                            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1ST_cfzAXUmKy1YHXaKWXlgYYgropwbZcXo1SPR-jnE1WBrkB76Mj8YVsUmkmRbopBmMW8o4_k"
+                            target='_blank'
                             rel="noopener noreferrer"
                         >
                             Agendar ahora
@@ -321,7 +318,7 @@ const Main = () => {
                                     <p className="xp">de experiencia</p>
                                 </div>
                             </div>
-                            <a className="btn-primary btn-primary--about" href="https://wa.link/sf967w" target="_blank">
+                            <a className="btn-primary btn-primary--about" href="https://wa.link/70uspg" target="_blank">
                                 Más información
                             </a>
                         </div>
@@ -408,7 +405,7 @@ const Main = () => {
                     <div className={`processes__texts center container hidden ${Secc8MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc8MeRef}>
                         <span className="processes__guide guide">Nuestros Procesos</span>
                         <h2 className="processes__title title">
-                            <span className="one">¿Cómo logramos</span>
+                            <span className="one">¿Cómo logramos </span>
                             <span className="three">el éxito?</span>
                         </h2>
                         <p className="processes__paragraph paragraph">
@@ -417,7 +414,7 @@ const Main = () => {
                             satisfacción para todos nuestros clientes
                         </p>
                     </div>
-                    <div className={`processes__group hidden ${Secc9MeInView ? 'scale-in-bl' : 'fade-in'}`} ref={Secc9MeRef}>
+                    <div className="processes__group">
                         <div className="processes__background">
                             <img
                                 className="img"
@@ -429,7 +426,7 @@ const Main = () => {
                             />
                         </div>
                         <div className="processes__group-content container">
-                            <article className="process">
+                            <article className={`process hidden ${Secc8MeInView ? 'scale-in-bl' : 'fade-in'}`} ref={Secc8MeRef}>
                                 <p className="process__number">01</p>
                                 <p className="process__title">
                                     <strong>Evaluación Inicial</strong>
@@ -439,7 +436,7 @@ const Main = () => {
                                     asesorías
                                 </p>
                             </article>
-                            <article className="process">
+                            <article className={`process hidden ${Secc8MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc8MeRef}>
                                 <p className="process__number">02</p>
                                 <p className="process__title">
                                     <strong>Desarrollo y Entregas</strong>
@@ -448,7 +445,7 @@ const Main = () => {
                                     Trabajamos en entregas parciales, brindando informes de progreso
                                 </p>
                             </article>
-                            <article className="process">
+                            <article className={`process hidden ${Secc8MeInView ? 'scale-in-bl' : 'fade-in'}`} ref={Secc8MeRef}>
                                 <p className="process__number">03</p>
                                 <p className="process__title">
                                     <strong>Revisión y Finalización</strong>
@@ -469,7 +466,7 @@ const Main = () => {
                                 className="video__img"
                                 src="/videos/tesis.mp4" // Asegúrate de que la ruta al video sea correcta
                                 title="¿Cómo lo hacemos? | Tesis vip Servicio de asesoría y redacción"
-                                controls={false} // Desactiva los controles predeterminados
+                                controls={true}
                                 id="custom-video"
                             ></video>
                         </div>
@@ -546,7 +543,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Tesis de Pregrado</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/i003n2" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/wh43tv" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -566,7 +563,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Tesis de Postgrado</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/5nat26" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/cdouue" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -586,7 +583,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Levantamiento de Observaciones</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/ejdi2d" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/yba717" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -606,7 +603,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Parafraseo</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/bsqec9" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/uue3ad" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -626,7 +623,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Revisión con Turnitin</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/0pbepd" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/1enhyb" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -646,7 +643,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Asesoría de Tesis</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/3qfuz1" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/iyxwmj" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -666,7 +663,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Trabajos Universitarios</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/wjfg8a" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/36kct9" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -778,7 +775,7 @@ const Main = () => {
                 </section>
                 <section className="faqs">
                     <div className="faqs__content container">
-                        <div className={`faqs__group hidden ${Secc13MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc13MeRef}>
+                        <div className="faqs__group">
                             <figure className="faqs__figure">
                                 <img
                                     className="faqs__img"
@@ -950,7 +947,7 @@ const Main = () => {
                                     </span>
                                     <div className="contact__text">
                                         <p className="contact__name paragraph">Celular</p>
-                                        <p className="contact__data paragraph">+51 921 777 947</p>
+                                        <p className="contact__data paragraph">+51 901 815 850</p>
                                     </div>
                                 </li>
                                 <li className="contact__item">
@@ -978,47 +975,75 @@ const Main = () => {
                             <p className="form__paragraph paragraph">
                                 Completa el formulario de contacto para comunicarte con nosotros
                             </p>
-                            <form className="form__form" action="" method="post">
-                                <input className="form__input" type="text" placeholder="Nombres" />
-                                <select className="form__input form__input--select">
+                            <form className="form__form" onSubmit={handleFormSubmit}>
+                                <input className="form__input" type="text" placeholder="Nombres" value={formData.nombres}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            nombres: e.target.value,
+                                        }))} />
+                                <select className="form__input form__input--select" aria-label="Carrera" value={formData.carrera}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            carrera: e.target.value,
+                                        }))
+                                    }>
                                     <option value="" selected="" disabled="">
                                         Seleccione una carrera
                                     </option>
-                                    <option value="ciencias-sociales">Ciencias Sociales</option>
-                                    <option value="ciencias-de-la-salud">Ciencias de la Salud</option>
-                                    <option value="ciencias-empresariales">
+                                    <option value="Ciencias Sociales">Ciencias Sociales</option>
+                                    <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+                                    <option value="Ciencias Empresariales">
                                         Ciencias Empresariales
                                     </option>
-                                    <option value="ingenierias-y-arquitectura">
+                                    <option value="Ingenierías y Arquitectura">
                                         Ingenierías y Arquitectura
                                     </option>
-                                    <option value="ciencias-biologicas-y-agronomas">
+                                    <option value="Ciencias Biológicas y Agrónomas">
                                         Ciencias Biológicas y Agrónomas
                                     </option>
-                                    <option value="ciencias-basicas">Ciencias Básicas</option>
-                                    <option value="carreras-tecnicas">Carreras Técnicas</option>
+                                    <option value="Carreras Técnicas">Carreras Técnicas</option>
                                     <option value="otros">Otros</option>
                                 </select>
-                                <input className="form__input" type="tel" placeholder="Celular" />
-                                <select className="form__input form__input--select">
+                                <input className="form__input" type="tel" placeholder="Celular" value={formData.celular}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            celular: e.target.value,
+                                        }))
+                                    } />
+                                <select className="form__input form__input--select" aria-label="Servicio" value={formData.servicio}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            servicio: e.target.value,
+                                        }))
+                                    }>
                                     <option value="" selected="" disabled="">
                                         Seleccione un servicio
                                     </option>
-                                    <option value="redaccion-tesis-pregrado">
+                                    <option value="Redacción de Tesis de Pregrado">
                                         Redacción de Tesis de Pregrado
                                     </option>
-                                    <option value="redaccion-tesis-postgrado">
+                                    <option value="Redacción de Tesis de Postgrado">
                                         Redacción de Tesis de Postgrado
                                     </option>
-                                    <option value="levantamiento-observaciones">
+                                    <option value="Levantamiento de Observaciones">
                                         Levantamiento de Observaciones
                                     </option>
-                                    <option value="parafraseo">Parafraseo</option>
+                                    <option value="Parafraseo">Parafraseo</option>
                                 </select>
                                 <textarea
                                     className="form__input form__input--textarea"
                                     placeholder="Escribe tu mensaje aquí"
-                                    defaultValue={""}
+                                    defaultValue={""} value={formData.mensaje}
+                                    onChange={(e) =>
+                                        setFormData((prevData) => ({
+                                            ...prevData,
+                                            mensaje: e.target.value,
+                                        }))
+                                    }
                                 />
                                 <input
                                     className="form__input form__input--submit"
@@ -1101,7 +1126,6 @@ const Main = () => {
                     </div>
                 </section>
             </main>
-
         </>
     )
 }

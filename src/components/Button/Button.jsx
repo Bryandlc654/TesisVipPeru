@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import './Button.css';
 import Logo from '../../assets/img/icono.webp'
 
@@ -19,7 +19,7 @@ const Button = () => {
 
     input.value = '';
 
-    const phoneNumber = '+51921777947';
+    const phoneNumber = '+51930443379';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };

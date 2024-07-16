@@ -4,14 +4,38 @@ import ServiceImg3 from "../../assets/img/servicios-tres.webp"
 import ServiceImg5 from "../../assets/img/asesora.webp"
 import ServiceImg6 from "../../assets/img/turnitin.webp"
 import ServiceImg7 from "../../assets/img/trabajos.webp"
+import { useInView } from 'react-intersection-observer';
 
 const Main = () => {
+
+  const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+  const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({
+    threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+  });
+
   return (
     <>
       <main className="main">
         <section className="services service--page">
           <div className="services__content container">
-            <div className="services__texts center fade-in-fwd">
+            <div className={`services__texts center hidden ${Secc1MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc1MeRef}>
               <span className="services__guide guide">Lo que hacemos</span>
               <h2 className="services__title title">
                 <span className="one">Nuestros </span>
@@ -26,7 +50,7 @@ const Main = () => {
         </section>
         <section className="services-group">
           <div className="services-group__content container">
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -34,10 +58,7 @@ const Main = () => {
                   <span className="three">de Pregrado</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Nuestro servicio de redacción de tesis de pregrado está diseñado para ayudarte a alcanzar el éxito académico. Contamos con un equipo de expertos en diversas disciplinas que te guiarán en cada etapa del proceso, desde la investigación hasta la presentación final.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -54,15 +75,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
-                     target="_blank"
+                    target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -76,7 +98,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc3MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc3MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -84,10 +106,7 @@ const Main = () => {
                   <span className="three">de Postgrado</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Te brindamos un servicio especializado en la redacción de tesis de postgrado, con un enfoque en la excelencia académica y la profundidad de investigación. Nuestros expertos te guiarán en la estructuración, análisis y presentación de tu trabajo, asegurando que cumpla con los más altos estándares académicos.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -104,15 +123,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
-                     target="_blank"
+                    target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -126,7 +146,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc4MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc4MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -134,10 +154,7 @@ const Main = () => {
                   <span className="three">Observaciones</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Ofrecemos un servicio profesional de levantamiento de observaciones para tus trabajos académicos. Nuestro equipo se encarga de identificar y corregir cualquier error o inconsistencia, asegurando que tu documento cumpla con todos los requisitos y estándares exigidos.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -154,15 +171,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
-                     target="_blank"
+                    target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -176,7 +194,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc5MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc5MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -184,10 +202,7 @@ const Main = () => {
                   <span className="three">Tesis</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Brindamos un servicio integral de asesoría de tesis para estudiantes de todos los niveles académicos. Nuestro equipo de expertos te guiará en cada etapa del proceso, desde la formulación del tema hasta la defensa final. Recibirás orientación personalizada para desarrollar una investigación sólida y bien estructurada, asegurando que tu tesis cumpla con los más altos estándares académicos.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -204,15 +219,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
-                     target="_blank"
+                    target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -226,7 +242,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc6MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc6MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -234,10 +250,7 @@ const Main = () => {
                   <span className="three">Universitarios</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Ofrecemos un servicio completo de elaboración de trabajos universitarios, adaptado a tus necesidades académicas. Nuestro equipo de profesionales te apoyará en la investigación, redacción y presentación de trabajos en diversas áreas del conocimiento. Aseguramos que cada trabajo cumpla con los requisitos y estándares de tu institución, facilitando tu éxito académico.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -254,15 +267,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
                     target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -276,7 +290,7 @@ const Main = () => {
                 />
               </figure>
             </div>
-            <div className="services-group__service fade-in-fwd">
+            <div className={`services-group__service hidden ${Secc7MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc7MeRef}>
               <div className="service-group__texts">
                 <span className="guide">Servicios</span>
                 <h2 className="service-group__title title">
@@ -284,10 +298,7 @@ const Main = () => {
                   <span className="three">Turnitin</span>
                 </h2>
                 <p className="service-group__paragraph paragraph">
-                  Nos especializamos en brindarte un acompañamiento integral y
-                  personalizado en cada etapa de tu tesis. Nuestros servicios están
-                  diseñados para garantizar tu éxito académico y profesional. Descubre
-                  cómo podemos ayudarte:
+                  Garantiza la originalidad de tus trabajos académicos con nuestro servicio de Revisión con Turnitin. Analizamos tus documentos para detectar cualquier tipo de plagio y te proporcionamos un informe detallado. Nuestro equipo te ayudará a entender los resultados y a mejorar la calidad y autenticidad de tu trabajo, asegurando que cumplas con los estándares académicos.
                 </p>
                 <div className="service-group__group">
                   <div className="service-group__group-number">
@@ -304,15 +315,16 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 921 777 947</span>
+                      <span className="number">+51 901 815 850</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/t96smb"
+                    href="https://wa.link/yf2h5y"
                     rel="noopener noreferrer"
-                     target="_blank"
+                    target="_blank"
+                    title="Contactar por whatsapp"
                   >
                     Iniciar
                   </a>
@@ -329,7 +341,6 @@ const Main = () => {
           </div>
         </section>
       </main>
-
     </>
   )
 }
