@@ -318,7 +318,7 @@ const Main = () => {
                                     <p className="xp">de experiencia</p>
                                 </div>
                             </div>
-                            <a className="btn-primary btn-primary--about" href="https://wa.link/70uspg" target="_blank">
+                            <a className="btn-primary btn-primary--about" href="/Nosotros">
                                 Más información
                             </a>
                         </div>
@@ -401,8 +401,8 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="processes">
-                    <div className={`processes__texts center container hidden ${Secc8MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc8MeRef}>
+                <section ref={Secc8MeRef} className="processes">
+                    <div className={`processes__texts center container hidden ${Secc8MeInView ? 'fade-in-fwd' : 'fade-in'}`}>
                         <span className="processes__guide guide">Nuestros Procesos</span>
                         <h2 className="processes__title title">
                             <span className="one">¿Cómo logramos </span>
@@ -535,7 +535,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg1}
-                                            loading="lazy"
                                             alt="Una joven mujer en una graduación de pie frente al escenario"
                                         />
                                     </figure>
@@ -543,7 +542,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Tesis de Pregrado</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/wh43tv" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/yrgtop" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -555,7 +554,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg2}
-                                            loading="lazy"
                                             alt="Un joven hombre con anteojos en una graduación de pie"
                                         />
                                     </figure>
@@ -563,7 +561,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Tesis de Postgrado</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/cdouue" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/8z5jt9" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -575,7 +573,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg3}
-                                            loading="lazy"
                                             alt="Un retrato elegante profesional de una mujer de negocios"
                                         />
                                     </figure>
@@ -583,7 +580,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Levantamiento de Observaciones</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/yba717" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/2ybw3g" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -595,7 +592,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg4}
-                                            loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
                                     </figure>
@@ -603,7 +599,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Parafraseo</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/uue3ad" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/7u5f3x" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -615,7 +611,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg6}
-                                            loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
                                     </figure>
@@ -623,7 +618,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Revisión con Turnitin</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/1enhyb" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/q4r7xr" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -635,7 +630,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg5}
-                                            loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
                                     </figure>
@@ -643,7 +637,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Asesoría de Tesis</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/iyxwmj" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/1dg7tq" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -655,7 +649,6 @@ const Main = () => {
                                         <img
                                             className="service__img"
                                             src={ServiceImg7}
-                                            loading="lazy"
                                             alt="Un abogado en un retrato profesional"
                                         />
                                     </figure>
@@ -663,7 +656,7 @@ const Main = () => {
                                         <p className="service__title">
                                             <strong>Redacción de Trabajos Universitarios</strong>
                                         </p>
-                                        <a className="service__cta" href="https://wa.link/36kct9" target='_blank'>
+                                        <a className="service__cta" href="https://wa.link/qqj13v" target='_blank'>
                                             Contratar
                                         </a>
                                     </div>
@@ -714,7 +707,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg1}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -724,7 +716,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg2}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -734,7 +725,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg3}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -744,7 +734,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg4}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -754,7 +743,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg5}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -764,7 +752,6 @@ const Main = () => {
                                         <img
                                             className="opinions__img"
                                             src={TestimonialImg6}
-                                            loading="lazy"
                                             alt="Captura de pantalla de whatsapp sobre un cliente agradeciendo nuestros servicios que ofrecemos"
                                         />
                                     </figure>
@@ -947,7 +934,7 @@ const Main = () => {
                                     </span>
                                     <div className="contact__text">
                                         <p className="contact__name paragraph">Celular</p>
-                                        <p className="contact__data paragraph">+51 901 815 850</p>
+                                        <p className="contact__data paragraph">+51 930 443 379</p>
                                     </div>
                                 </li>
                                 <li className="contact__item">

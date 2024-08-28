@@ -7,7 +7,7 @@
 /* WHATSAPP */
 .whatsapp {
     position: fixed;
-    z-index: 20;
+    z-index: 100;
     right: .5rem;
     bottom: .5rem;
     display: flex;
@@ -75,7 +75,7 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .chat-header {

@@ -71,7 +71,7 @@ const Footer = () => {
                             <p className="footer__title">Redes Sociales</p>
                             <ul className="footer__menu">
                                 <li className="footer__item">
-                                    <a className="footer__link" href="https://www.facebook.com/TESISVIPasesoriaycapacitacion" target='_blank' rel="noopener noreferrer">
+                                    <a className="footer__link" href="https://www.facebook.com/TesisVipPeru/" target='_blank' rel="noopener noreferrer">
                                         Facebook
                                     </a>
                                 </li>

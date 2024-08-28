@@ -38,7 +38,6 @@ const Main = () => {
                                     <img
                                         className="service__img"
                                         src={ServiceImg1}
-                                     
                                         alt=""
                                     />
                                 </figure>
@@ -49,8 +48,7 @@ const Main = () => {
                                             <span>Sociales</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
-" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -60,7 +58,6 @@ const Main = () => {
                                     <img
                                         className="service__img"
                                         src={ServiceImg2}
-                                     
                                         alt=""
                                     />
                                 </figure>
@@ -71,8 +68,7 @@ const Main = () => {
                                             <span>de la Salud</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
-" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -92,8 +88,7 @@ const Main = () => {
                                             <span>Empresariales</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
-" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -113,8 +108,7 @@ const Main = () => {
                                             <span>Arquitectura</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
-" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -134,8 +128,7 @@ const Main = () => {
                                             <span>y Agrónomas</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51901815850
-" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>
@@ -155,7 +148,7 @@ const Main = () => {
                                             <span>Técnicas</span>
                                         </strong>
                                     </p>
-                                    <a className="service__cta" href="https://api.whatsapp.com/send?phone=51921777947" target='_blank'>
+                                    <a className="service__cta" href="https://wa.link/70uspg" target='_blank'>
                                         Contratar
                                     </a>
                                 </div>

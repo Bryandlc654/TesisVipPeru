@@ -163,7 +163,7 @@ const Main = () => {
                                     <li>
                                         <a
                                             className="about-company__item"
-                                            href="https://www.facebook.com/TESISVIPasesoriaycapacitacion"
+                                            href="https://www.facebook.com/TesisVipPeru/"
                                             rel="noopener noreferrer"
                                             target="_blank"
                                             title="TesisVIP Asesoría y Capacitación"

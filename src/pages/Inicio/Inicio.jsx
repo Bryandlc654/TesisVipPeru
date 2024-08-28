@@ -3,7 +3,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import Main from "./Main";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
+
+
+
 import { useInView } from 'react-intersection-observer';
+
+
 
 const Inicio = () => {
     const [formData, setFormData] = React.useState({

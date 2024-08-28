@@ -90,7 +90,7 @@ const Main = () => {
                                 </svg>
                                 <div className="info-contact__contact">
                                     <p className="info-contact__name paragraph">Celular</p>
-                                    <p className="info-contact__info paragraph">+51 901 815 850</p>
+                                    <p className="info-contact__info paragraph">+51 930 443 379</p>
                                 </div>
                             </li>
                             <li className="info-contact__item">
@@ -133,7 +133,7 @@ const Main = () => {
                     <section className="contact__icons">
                         <ul className="data__menu">
                             <li className="data__item">
-                                <a className="data__link" href="https://www.facebook.com/TESISVIPasesoriaycapacitacion" target="_blank" rel="noopener noreferrer">
+                                <a className="data__link" href="https://www.facebook.com/TesisVipPeru/" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}

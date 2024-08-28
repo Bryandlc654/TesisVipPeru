@@ -9,18 +9,18 @@ const Post1 = () => {
                 <Navbar />
                 <Button />
                 <section className="hero__main hero__main--center">
-                    <h1 className="hero__title title">
+                    <h2 className="hero__title title">
                         <span className="one">Blog</span>
-                    </h1>
+                    </h2>
                 </section>
             </header>
             <main className="main__post">
                 <article className="post container">
                     <header className="post__texts">
-                        <h2 className="post__title title">
-                            <span className="one">¿CÓMO ELEGIR EL TEMA </span>
-                            <span className="three">DE MI TESIS?</span>
-                        </h2>
+                        <h1 className="post__title title">
+                            <span className="one">¿Cómo elegir el tema </span>
+                            <span className="three">de mi tesis?</span>
+                        </h1>
                         <p className="post__paragraph paragraph">
                             El tema de tesis es el eje central de tu trabajo de investigación. Es el asunto o problema específico que te propones abordar y sobre el cual desarrollarás tu análisis, discusión y conclusiones. Elegir un buen tema de tesis es crucial, para ayudarte en este proceso, te presento algunos consejos:
                         </p>

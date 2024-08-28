@@ -75,13 +75,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/yrgtop"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
@@ -123,13 +123,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/8z5jt9"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
@@ -171,13 +171,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/2ybw3g"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
@@ -219,13 +219,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/1dg7tq"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
@@ -267,13 +267,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/qqj13v"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
@@ -315,13 +315,13 @@ const Main = () => {
                       </svg>
                     </div>
                     <p className="service-group__number">
-                      <span className="number">+51 901 815 850</span>
+                      <span className="number">+51 930 443 379</span>
                       <span className="text">Whatsapp</span>
                     </p>
                   </div>
                   <a
                     className="btn-primary btn-primary--service-group"
-                    href="https://wa.link/yf2h5y"
+                    href="https://wa.link/q4r7xr"
                     rel="noopener noreferrer"
                     target="_blank"
                     title="Contactar por whatsapp"
