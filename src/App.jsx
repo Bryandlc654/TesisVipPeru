@@ -9,7 +9,8 @@ import Carreras from './pages/Carreras/Carreras';
 import Testimonios from './pages/Testomonios/Testimonios';
 import ComoElegirTemaTesis from './pages/Blog/Post/Post1';
 import MarcoTeorico from './pages/Blog/Post/Post2';
-import TesisUniversitaria  from './pages/Blog/Post/Post3';
+import TesisUniversitaria from './pages/Blog/Post/Post3';
+import Conclusiones from './pages/Blog/Post/Post4';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/ComoElegirTemaTesis" element={<ComoElegirTemaTesis />} />
         <Route path="/Marco-Teorico" element={<MarcoTeorico />} />
         <Route path="/Tesis-Universitaria" element={<TesisUniversitaria />} />
+        <Route path="/Conclusiones" element={<Conclusiones />} />
       </Routes>
     </BrowserRouter>
   );

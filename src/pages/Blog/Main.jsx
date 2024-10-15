@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import ServiceImg1 from "../../assets/img/servicios-uno.webp"
 import Imgblog2 from "../../assets/img/Tesis2.webp"
 import Imgblog3 from "../../assets/img/Tesis3.webp"
+import Imgblog4 from "../../assets/img/Tesis4.webp"
 
 
 
@@ -71,9 +72,24 @@ const Main = () => {
                                 <div className="article__texts">
                                     <strong className="article__title">¿Qué es una tesis universitaria?</strong>
                                     <p className="article__paragraph paragraph">
-                                    Se trata de un proyecto extenso y complejo que requiere un alto nivel de compromiso, dedicación y habilidades investigativas.
+                                        Se trata de un proyecto extenso y complejo que requiere un alto nivel de compromiso, dedicación y habilidades investigativas.
                                     </p>
                                     <Link className="article__cta" to="/Tesis-Universitaria">
+                                        Ver más
+                                    </Link>
+                                </div>
+                            </article>
+                            <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
+                                <figure className="article__figure" >
+                                    <img src={Imgblog4} alt="" className='article__figure' />
+                                </figure>
+
+                                <div className="article__texts">
+                                    <strong className="article__title">¿Cómo escribir las conclusiones?</strong>
+                                    <p className="article__paragraph paragraph">
+                                        Las conclusiones son la parte final de una tesis donde se sintetizan los resultados, se responde a la pregunta de investigación y se discute la relevancia de los hallazgos. 
+                                    </p>
+                                    <Link className="article__cta" to="/Conclusiones">
                                         Ver más
                                     </Link>
                                 </div>
