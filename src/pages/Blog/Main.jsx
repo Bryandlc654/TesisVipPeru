@@ -4,6 +4,9 @@ import ServiceImg1 from "../../assets/img/servicios-uno.webp"
 import Imgblog2 from "../../assets/img/Tesis2.webp"
 import Imgblog3 from "../../assets/img/Tesis3.webp"
 import Imgblog4 from "../../assets/img/Tesis4.webp"
+import Imgblog5 from "../../assets/img/Tesis5.webp"
+import Imgblog6 from "../../assets/img/Tesis6.webp"
+
 
 
 
@@ -35,7 +38,7 @@ const Main = () => {
                         <div className="blog__articles">
                             <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
                                 <figure className="article__figure" >
-                                    <img src={ServiceImg1} alt="" className='article__figure' />
+                                    <img src={ServiceImg1} alt="¿Cómo elegir el Tema de mi Tesis?" className='article__figure' />
                                 </figure>
 
                                 <div className="article__texts">
@@ -50,7 +53,7 @@ const Main = () => {
                             </article>
                             <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
                                 <figure className="article__figure" >
-                                    <img src={Imgblog2} alt="" className='article__figure' />
+                                    <img src={Imgblog2} alt="¿Cómo estructurar el marco teórico de mi tesis y no morir en el intento?" className='article__figure' />
                                 </figure>
 
                                 <div className="article__texts">
@@ -66,7 +69,7 @@ const Main = () => {
                             </article>
                             <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
                                 <figure className="article__figure" >
-                                    <img src={Imgblog3} alt="" className='article__figure' />
+                                    <img src={Imgblog3} alt="¿Qué es una tesis universitaria?" className='article__figure' />
                                 </figure>
 
                                 <div className="article__texts">
@@ -81,7 +84,7 @@ const Main = () => {
                             </article>
                             <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
                                 <figure className="article__figure" >
-                                    <img src={Imgblog4} alt="" className='article__figure' />
+                                    <img src={Imgblog4} alt="¿Cómo escribir las conclusiones?" className='article__figure' />
                                 </figure>
 
                                 <div className="article__texts">
@@ -90,6 +93,36 @@ const Main = () => {
                                         Las conclusiones son la parte final de una tesis donde se sintetizan los resultados, se responde a la pregunta de investigación y se discute la relevancia de los hallazgos. 
                                     </p>
                                     <Link className="article__cta" to="/Conclusiones">
+                                        Ver más
+                                    </Link>
+                                </div>
+                            </article>
+                            <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
+                                <figure className="article__figure" >
+                                    <img src={Imgblog5} alt="¿Cómo escribir la introducción de una tesis en corto tiempo y sin dificultades?" className='article__figure' />
+                                </figure>
+
+                                <div className="article__texts">
+                                    <strong className="article__title">¿Cómo escribir la introducción de una tesis en corto tiempo y sin dificultades?</strong>
+                                    <p className="article__paragraph paragraph">
+                                      La introducción es la carta de presentación de tu tesis. Debe ser atractiva, informativa y bien estructurada. 
+                                    </p>
+                                    <Link className="article__cta" to="/Como-Escribir-Introduccion-Tesis">
+                                        Ver más
+                                    </Link>
+                                </div>
+                            </article>
+                            <article className={`article hidden ${Secc2MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc2MeRef}>
+                                <figure className="article__figure" >
+                                    <img src={Imgblog6} alt="¿Cómo escribir la introducción de una tesis en corto tiempo y sin dificultades?" className='article__figure' />
+                                </figure>
+
+                                <div className="article__texts">
+                                    <strong className="article__title">El Marco Teórico de una Tesis: </strong>
+                                    <p className="article__paragraph paragraph">
+                                    El marco teórico sería como los planos de esa casa. Te indica qué materiales necesitas, cómo unir las piezas y cuál será el resultado final. 
+                                    </p>
+                                    <Link className="article__cta" to="/Como-Escribir-Introduccion-Tesis">
                                         Ver más
                                     </Link>
                                 </div>

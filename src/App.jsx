@@ -11,6 +11,7 @@ import ComoElegirTemaTesis from './pages/Blog/Post/Post1';
 import MarcoTeorico from './pages/Blog/Post/Post2';
 import TesisUniversitaria from './pages/Blog/Post/Post3';
 import Conclusiones from './pages/Blog/Post/Post4';
+import ComoEscribirIntroduccionTesis from './pages/Blog/Post/Post5';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Marco-Teorico" element={<MarcoTeorico />} />
         <Route path="/Tesis-Universitaria" element={<TesisUniversitaria />} />
         <Route path="/Conclusiones" element={<Conclusiones />} />
+        <Route path="/Como-Escribir-Introduccion-Tesis" element={<ComoEscribirIntroduccionTesis />} />
       </Routes>
     </BrowserRouter>
   );

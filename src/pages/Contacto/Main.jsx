@@ -133,7 +133,7 @@ const Main = () => {
                     <section className="contact__icons">
                         <ul className="data__menu">
                             <li className="data__item">
-                                <a className="data__link" href="https://www.facebook.com/TesisVipPeru/" target="_blank" rel="noopener noreferrer">
+                                <a className="data__link" href="https://www.facebook.com/TesisVip/" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
@@ -147,7 +147,7 @@ const Main = () => {
                                 </a>
                             </li>
                             <li className="data__item">
-                                <a className="data__link" href="https://www.instagram.com/tesis_vip_asesoria/" target="_blank" rel="noopener noreferrer">
+                                <a className="data__link" href="https://www.instagram.com/tesis_vip/" target="_blank" rel="noopener noreferrer">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width={16}
