@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button"
 import Footer from "../../components/Footer/Footer.jsx"
 import Main from "./Main.jsx"
 import "./Servicios.css"
+import { Text } from '../../cms/Editable';
 
 const Servicios = () => {
   return (
@@ -12,8 +13,8 @@ const Servicios = () => {
         <Button />
         <section className="hero__main hero__main--center">
           <h1 className="hero__title title">
-            <span className="one">Nuestros </span>
-            <span className="two"> Servicios</span>
+            <Text path="pageHero.title1" as="span" className="one" />
+            <Text path="pageHero.title2" as="span" className="two" />
           </h1>
         </section>
       </header>
