@@ -26,6 +26,10 @@ import AdminContacto from './admin/AdminContacto';
 import AdminTestimonios from './admin/AdminTestimonios';
 import AdminBlog from './admin/AdminBlog';
 import AdminArticulos from './admin/AdminArticulos';
+import AdminPublicaciones from './admin/AdminPublicaciones';
+import AdminReclamaciones from './admin/AdminReclamaciones';
+import DynamicArticle from './pages/Blog/DynamicArticle';
+import LibroDeReclamaciones from './pages/LibroDeReclamaciones/LibroDeReclamaciones';
 
 const page = (pageName, defaults, scope, Component) => (
   <ContentProvider page={pageName} defaults={defaults} scope={scope}>
@@ -61,6 +65,9 @@ function App() {
             <Route path="/Conclusiones" element={article('post-4')} />
             <Route path="/Como-Escribir-Introduccion-Tesis" element={article('post-5')} />
             <Route path="/El-Marco-Teorico" element={article('post-6')} />
+            <Route path="/articulo/:slug" element={<DynamicArticle />} />
+            <Route path="/LibroDeReclamaciones" element={<LibroDeReclamaciones />} />
+            <Route path="/libro-de-reclamaciones" element={<LibroDeReclamaciones />} />
 
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route
@@ -79,6 +86,8 @@ function App() {
               <Route path="testimonios" element={<AdminTestimonios />} />
               <Route path="blog" element={<AdminBlog />} />
               <Route path="articulos" element={<AdminArticulos />} />
+              <Route path="publicaciones" element={<AdminPublicaciones />} />
+              <Route path="reclamaciones" element={<AdminReclamaciones />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

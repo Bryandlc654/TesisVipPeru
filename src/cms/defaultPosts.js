@@ -74,7 +74,7 @@ export const defaultBlogContent = {
 const PROMO = {
   icon: 'telephone',
   title: 'Llama a Nuestros asesores',
-  number: '+51 930 443 379',
+  number: '+51 917 622 183',
   paragraph:
     '¡No pierdas más tiempo! Agenda una reunión online con nuestros asesores y da el primer paso hacia el éxito académico. ¡Haz clic para programar tu sesión!',
   cta: { label: 'Contactar', href: 'https://wa.link/70uspg', target: '_blank' },

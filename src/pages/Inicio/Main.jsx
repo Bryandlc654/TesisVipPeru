@@ -68,6 +68,7 @@ const Main = () => {
   const contact = get('contact') || { ways: [] };
   const info = get('info') || { items: [] };
   const form = get('hero.form') || {};
+  const promoPhone = String(get('promo.number') || '');
 
   return (
     <main>
@@ -81,21 +82,12 @@ const Main = () => {
             </h2>
             <Text path="benefits.paragraph" as="p" className="benefits__paragraph paragraph" multiline />
             <div className="benefits__group">
-              <div className="benefits__group-number">
-                <div className="benefits__icon">
-                  <IconField path="benefits.icon" size={16} />
-                </div>
-                <p className="benefits__number">
-                  <Text path="benefits.phone" as="span" className="number" />
-                  <Text path="benefits.phoneLabel" as="span" className="text" />
-                </p>
-              </div>
               <LinkField path="benefits.cta" className="btn-primary btn-primary--benefits" title="Contactar por Whatsapp" />
             </div>
           </div>
           <div className={`benefits__list hidden ${Secc2MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc2MeRef}>
             {benefits.items.map((item, index) => (
-              <article className="benefit" key={index}>
+              <article className="benefit" key={index} tabIndex={0}>
                 <div className="benefit__content">
                   <p className="benefit__number">
                     <ImageField path={`benefits.items.${index}.image`} alt="" />
@@ -112,18 +104,23 @@ const Main = () => {
       </section>
 
       <section className="promo">
-        <div className={`promo__content container hidden ${Secc3MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc3MeRef}>
-          <div className="promo__group-call">
-            <div className="promo__icon">
-              <IconField path="promo.icon" size={16} />
-            </div>
-            <p className="promo__number">
-              <Text path="promo.title" as="span" className="text" />
-              <Text path="promo.number" as="span" className="number" />
-            </p>
+        <div className={`promo__content promo__content--split container hidden ${Secc3MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc3MeRef}>
+          <div className="promo__texts">
+            <h2 className="promo__title">
+              <Text path="promo.title" as="span" />
+            </h2>
+            <Text path="promo.paragraph" as="p" className="promo__paragraph paragraph" />
           </div>
-          <Text path="promo.paragraph" as="p" className="promo__paragraph paragraph" />
-          <LinkField path="promo.cta" className="btn-dark btn-dark--promo" />
+          <div className="promo__actions">
+            <LinkField path="promo.cta" className="btn-dark btn-dark--promo" />
+            {editMode ? (
+              <Text path="promo.number" as="span" className="promo__phone" />
+            ) : (
+              <a className="promo__phone" href={`tel:${promoPhone.replace(/\D/g, '')}`}>
+                <Text path="promo.number" as="span" />
+              </a>
+            )}
+          </div>
         </div>
       </section>
 
@@ -154,11 +151,6 @@ const Main = () => {
                   <Text key={index} path={`about.list.${index}`} as="li" className="about__item" />
                 ))}
               </ul>
-              <div className="about__experience">
-                <Text path="about.experienceNumber" as="p" className="number" />
-                <Text path="about.experienceYear" as="p" className="year" />
-                <Text path="about.experienceLabel" as="p" className="xp" />
-              </div>
             </div>
             <LinkField path="about.cta" className="btn-primary btn-primary--about" />
           </div>
@@ -299,6 +291,7 @@ const Main = () => {
                         <Text path={`services.items.${index}.title`} as="span" />
                       </strong>
                     </p>
+                    <Text path={`services.items.${index}.paragraph`} as="p" className="service__paragraph" />
                     <LinkField path={`services.items.${index}.cta`} className="service__cta" />
                   </div>
                 </article>
@@ -311,6 +304,7 @@ const Main = () => {
       <section className="opinions">
         <div className="opinions__content container">
           <div className={`opinions__texts center hidden ${Secc12MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc12MeRef}>
+            <Text path="opinions.guide" as="span" className="opinions__guide guide" />
             <h2 className="opinions__title title">
               <Text path="opinions.title1" as="span" className="one" />
               <Text path="opinions.title2" as="span" className="three" />
@@ -367,6 +361,7 @@ const Main = () => {
                   <Text path="faqs.badgeText" as="span" />
                 </strong>
               </p>
+              <LinkField path="faqs.badgeCta" className="btn-dark btn-dark--faqs" />
             </div>
           </div>
           <div className={`faqs__texts hidden ${Secc14MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc14MeRef}>

@@ -3,23 +3,37 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'node:path';
+import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { config } from './config.js';
 import { testConnection } from './db.js';
 import authRoutes from './routes/auth.routes.js';
 import contentRoutes from './routes/content.routes.js';
 import uploadRoutes from './routes/upload.routes.js';
+import blogRoutes from './routes/blog.routes.js';
+import complaintsRoutes from './routes/complaints.routes.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const uploadsDir = path.resolve(__dirname, '../uploads');
+const projectRoot = path.resolve(__dirname, '../..');
+const frontendDir = ['dist', 'public']
+  .map((name) => path.resolve(projectRoot, name))
+  .find((dir) => fs.existsSync(path.join(dir, 'index.html')));
 
 const app = express();
 
+app.set('trust proxy', 1);
 app.disable('x-powered-by');
 
 app.use(
   helmet({
-    crossOriginResourcePolicy: { policy: 'cross-origin' },
+    contentSecurityPolicy: false,
+  }),
+);
+
+app.use(
+  '/api',
+  helmet({
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
@@ -53,6 +67,21 @@ app.get('/api/health', (_req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/content', contentRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/blog', blogRoutes);
+app.use('/api/complaints', complaintsRoutes);
+
+if (frontendDir) {
+  app.use(express.static(frontendDir, { maxAge: '1d' }));
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' || req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+      return next();
+    }
+    if (/\.[a-z0-9]+$/i.test(req.path)) {
+      return next();
+    }
+    return res.sendFile(path.join(frontendDir, 'index.html'));
+  });
+}
 
 app.use((_req, res) => {
   res.status(404).json({ message: 'Ruta no encontrada' });
@@ -88,7 +117,7 @@ const start = async () => {
     process.exit(1);
   }
 
-  app.listen(config.port, () => {
+  app.listen(config.port, config.host, () => {
     console.log(`API escuchando en http://localhost:${config.port}`);
   });
 };

@@ -1,10 +1,26 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { useCMS } from '../../cms/ContentContext';
 import { ImageField, LinkField, Text } from '../../cms/Editable';
+import { fetchPosts } from '../../cms/api';
 
 const Main = () => {
   const { get } = useCMS();
   const blog = get('blog') || { items: [] };
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    let active = true;
+    fetchPosts()
+      .then(({ posts: list }) => {
+        if (active) setPosts(list);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({ threshold: 0 });
   const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({ threshold: 0 });
@@ -34,6 +50,21 @@ const Main = () => {
                   </strong>
                   <Text path={`blog.items.${index}.excerpt`} as="p" className="article__paragraph paragraph" multiline />
                   <LinkField path={`blog.items.${index}.cta`} className="article__cta" />
+                </div>
+              </article>
+            ))}
+
+            {posts.map((post) => (
+              <article className="article" key={post.slug}>
+                <figure className="article__figure">
+                  <img className="article__figure" src={post.coverImage} alt={post.coverAlt || post.title} />
+                </figure>
+                <div className="article__texts">
+                  <strong className="article__title">{post.title}</strong>
+                  <p className="article__paragraph paragraph">{post.excerpt}</p>
+                  <Link className="article__cta" to={`/articulo/${encodeURIComponent(post.slug)}`}>
+                    Ver más
+                  </Link>
                 </div>
               </article>
             ))}

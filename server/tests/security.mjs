@@ -200,6 +200,23 @@ const run = async () => {
     expect(res.status === 400 || res.status === 413, `status ${res.status}`);
   });
 
+  await check('HTML disfrazado con MIME de imagen y extensión .html es rechazado', async () => {
+    const evil = '<script>alert(1)</script>';
+    const form = new FormData();
+    form.append('file', new Blob([evil], { type: 'image/png' }), 'x.html');
+    const res = await api('POST', '/api/upload', { token, formData: form });
+    expect(res.status === 400, `status ${res.status} (se sirvió como HTML: ${res.raw})`);
+  });
+
+  await check('PNG válido conserva extensión de imagen (no la del nombre)', async () => {
+    const form = new FormData();
+    form.append('file', new Blob([PNG_1x1], { type: 'image/png' }), 'img.html');
+    const res = await api('POST', '/api/upload', { token, formData: form });
+    expect(res.status === 201, `status ${res.status}`);
+    createdUploads.push(res.data.url);
+    expect(/\.png$/i.test(res.data.url), `url inesperada: ${res.data.url}`);
+  });
+
   await check('SVG subido (riesgo de XSS almacenado en mismo origen)', async () => {
     const svg = '<svg xmlns="http://www.w3.org/2000/svg" onload="alert(1)"></svg>';
     const form = new FormData();

@@ -41,4 +41,34 @@ export const uploadImage = (file) => {
     .then((res) => res.data);
 };
 
+export const fetchPosts = (params = {}) =>
+  api.get('/blog/posts', { params }).then((res) => res.data);
+
+export const fetchPost = (slug) =>
+  api.get(`/blog/posts/${encodeURIComponent(slug)}`).then((res) => res.data);
+
+export const createPost = (data) =>
+  api.post('/blog/posts', data).then((res) => res.data);
+
+export const updatePost = (slug, data) =>
+  api.put(`/blog/posts/${encodeURIComponent(slug)}`, data).then((res) => res.data);
+
+export const deletePost = (slug) =>
+  api.delete(`/blog/posts/${encodeURIComponent(slug)}`).then((res) => res.data);
+
+export const createComplaint = (data) =>
+  api.post('/complaints', data).then((res) => res.data);
+
+export const fetchComplaints = (params = {}) =>
+  api.get('/complaints', { params }).then((res) => res.data);
+
+export const fetchComplaint = (id) =>
+  api.get(`/complaints/${encodeURIComponent(id)}`).then((res) => res.data);
+
+export const updateComplaint = (id, data) =>
+  api.patch(`/complaints/${encodeURIComponent(id)}`, data).then((res) => res.data);
+
+export const deleteComplaint = (id) =>
+  api.delete(`/complaints/${encodeURIComponent(id)}`).then((res) => res.data);
+
 export default api;

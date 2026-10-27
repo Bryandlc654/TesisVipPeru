@@ -64,6 +64,18 @@ const AdminLayout = () => {
           >
             Artículos
           </NavLink>
+          <NavLink
+            to="/admin/publicaciones"
+            className={({ isActive }) => `admin__nav-link ${isActive ? 'is-active' : ''}`}
+          >
+            Publicaciones
+          </NavLink>
+          <NavLink
+            to="/admin/reclamaciones"
+            className={({ isActive }) => `admin__nav-link ${isActive ? 'is-active' : ''}`}
+          >
+            Reclamaciones
+          </NavLink>
         </nav>
         <div className="admin__sidebar-foot">
           <div className="admin__user">

@@ -61,7 +61,7 @@ export const defaultCarrerasContent = {
   promo: {
     icon: 'telephone',
     title: 'Llama a Nuestros asesores',
-    number: '+51 901 815 850',
+    number: '+51 917 622 183',
     paragraph:
       '¡No pierdas más tiempo! Agenda una reunión online con nuestros asesores y da el primer paso hacia el éxito académico. ¡Haz clic para programar tu sesión!',
     cta: {

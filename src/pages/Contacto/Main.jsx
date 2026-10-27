@@ -4,7 +4,7 @@ import { useCMS } from '../../cms/ContentContext';
 import { IconField, ImageField, LinkField, Text } from '../../cms/Editable';
 
 const Main = () => {
-  const { get, editable, set } = useCMS();
+  const { get, editable, set, editMode } = useCMS();
   const info = get('info') || { items: [] };
   const socials = get('socials') || [];
   const form = get('form') || {};
@@ -48,12 +48,18 @@ const Main = () => {
             <Text path="info.paragraph" as="p" className="info-contact__paragraph paragraph" multiline />
           </div>
           <ul className="info-contact__group">
-            {info.items.map((_, index) => (
+            {info.items.map((item, index) => (
               <li className="info-contact__item" key={index}>
                 <IconField path={`info.items.${index}.icon`} size={16} />
                 <div className="info-contact__contact">
                   <Text path={`info.items.${index}.name`} as="p" className="info-contact__name paragraph" />
-                  <Text path={`info.items.${index}.value`} as="p" className="info-contact__info paragraph" />
+                  {!editMode && item?.href ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer">
+                      <Text path={`info.items.${index}.value`} as="p" className="info-contact__info paragraph" />
+                    </a>
+                  ) : (
+                    <Text path={`info.items.${index}.value`} as="p" className="info-contact__info paragraph" />
+                  )}
                 </div>
               </li>
             ))}
@@ -81,7 +87,6 @@ const Main = () => {
             <div className="form-contact__group">
               <Text path="form.name" as="p" className="form-contact__name paragraph" />
               <Text path="form.text" as="p" className="form-contact__text paragraph" multiline />
-              <LinkField path="form.cta" className="btn-white btn-white--contact" />
             </div>
           </article>
           <div className="form-contact__img">

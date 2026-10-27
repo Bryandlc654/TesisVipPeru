@@ -1,5 +1,3 @@
-import NosotrosImg1 from "../../assets/img/sobre-nosotros.webp"
-import NosotrosImg2 from "../../assets/img/sobre-nosotros-dos.webp"
 import NosotrosImg3 from "../../assets/img/sobre-la-empresa.webp"
 import NosotrosImg4 from "../../assets/img/sobre-nosotros-vision.webp"
 import NosotrosImg5 from "../../assets/img/sobre-nosotros-mision.webp"
@@ -7,34 +5,25 @@ import { useInView } from 'react-intersection-observer';
 
 const Main = () => {
     const { ref: Secc1MeRef, inView: Secc1MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc2MeRef, inView: Secc2MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc3MeRef, inView: Secc3MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc4MeRef, inView: Secc4MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc5MeRef, inView: Secc5MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc6MeRef, inView: Secc6MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc7MeRef, inView: Secc7MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc8MeRef, inView: Secc8MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
-    });
-    const { ref: Secc9MeRef, inView: Secc9MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
     const { ref: Secc10MeRef, inView: Secc10MeInView } = useInView({
-        threshold: 0, // Ajusta el umbral de visibilidad según tus necesidades
+        threshold: 0,
     });
 
     return (
@@ -124,22 +113,6 @@ const Main = () => {
                                     </div>
                                 </article>
                             </div>
-                        </div>
-                        <div className={`what-is__group hidden ${Secc3MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc3MeRef}>
-                            <figure className="what-is__figure">
-                                <img
-                                    className="what-is__img"
-                                    src={NosotrosImg1}
-                                    alt="Grupo de estudiantes con batas de graduación celebrando, y en el aire hay confeti"
-                                />
-                            </figure>
-                            <figure className="what-is__figure">
-                                <img
-                                    className="what-is__img"
-                                    src={NosotrosImg2}
-                                    alt="Gente de negocios chocando las palmas de las manos alegres de su trabajo"
-                                />
-                            </figure>
                         </div>
                     </div>
                 </section>
@@ -283,75 +256,77 @@ const Main = () => {
                         </div>
                     </div>
                 </section>
-                <section className="mission">
-                    <div className="mission__content container">
-                        <div className={`mission__texts hidden ${Secc6MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc6MeRef}>
-                            <span className="mission__guide guide">Nuestro propósito</span>
-                            <h2 className="mission__title title">
-                                <span className="three">Misión</span>
-                            </h2>
-                            <div className="paragraphs">
-                                <p className="mission__paragraph paragraph">
-                                    En Tesis VIP PROFESSIONALS CORPORATION, nuestra misión es ser tu
-                                    aliado estratégico hacia el éxito académico.
-                                </p>
-                                <p className="mission__paragraph paragraph">
-                                    Ofrecemos asesoría integral en la elaboración de tesis, garantizando
-                                    alta calidad y rigurosidad ética. Nos comprometemos a brindar un
-                                    servicio personalizado, desde la selección del tema hasta la
-                                    revisión final, promoviendo la originalidad y el desarrollo
-                                    profesional de cada estudiante.
-                                </p>
-                                <p className="mission__paragraph paragraph">
-                                    Guiamos a nuestros estudiantes en cada paso del proceso, asegurando
-                                    que sus trabajos cumplan con los estándares académicos y editoriales
-                                    más exigentes, fomentando siempre la honestidad intelectual y la
-                                    integridad académica.
-                                </p>
-                            </div>
-                        </div>
-                        <figure className={`mission__figure hidden ${Secc7MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc7MeRef}>
-                            <img
-                                className="mission__img"
-                                src={NosotrosImg5}
-                                loading="lazy"
-                                alt="Una reunión de compañeros"
-                            />
-                        </figure>
-                    </div>
-                </section>
-                <section className="vision">
-                    <div className="vision__content container">
-                        <figure className={`vision__figure hidden ${Secc8MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc8MeRef}>
-                            <img
-                                className="vision__img"
-                                src={NosotrosImg4}
-                                loading="lazy"
-                                alt="Una estudiante con bata de graduación mirando de frente sonriendo"
-                            />
-                        </figure>
-                        <div className={`vision__texts hidden ${Secc9MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc9MeRef}>
-                            <span className="vision__guide guide">Nuestro futuro</span>
-                            <h2 className="vision__title title">
-                                <span className="three">Visión</span>
-                            </h2>
-                            <div className="paragraphs">
-                                <p className="vision__paragraph paragraph">
-                                    Aspiramos a ser la empresa líder en asesoría y elaboración de tesis,
-                                    reconocida por la calidad excepcional de nuestros servicios y la
-                                    experiencia de nuestro equipo de profesionales.
-                                </p>
-                                <p className="vision__paragraph paragraph">
-                                    Nos comprometemos con el éxito académico de cada estudiante, siendo
-                                    la referencia de confianza para aquellos que buscan alcanzar la
-                                    excelencia en sus trabajos de tesis.
-                                </p>
-                                <p className="vision__paragraph paragraph">
-                                    Queremos posicionarnos como un pilar fundamental en la formación
-                                    académica y profesional de nuestros clientes, ofreciendo un apoyo
-                                    integral y de alta calidad.
-                                </p>
-                            </div>
+                <section className="mission-vision">
+                    <div className="mission-vision__content container">
+                        <div className="mission-vision__grid">
+                            <article className={`mission-vision__card hidden ${Secc6MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc6MeRef}>
+                                <figure className="mission-vision__figure">
+                                    <img
+                                        className="mission-vision__img"
+                                        src={NosotrosImg5}
+                                        loading="lazy"
+                                        alt="Una reunión de compañeros"
+                                    />
+                                </figure>
+                                <div className="mission-vision__texts">
+                                    <span className="mission-vision__guide guide">Nuestro propósito</span>
+                                    <h2 className="mission-vision__title title">
+                                        <span className="three">Misión</span>
+                                    </h2>
+                                    <div className="paragraphs">
+                                        <p className="mission-vision__paragraph paragraph">
+                                            En Tesis VIP PROFESSIONALS CORPORATION, nuestra misión es ser tu
+                                            aliado estratégico hacia el éxito académico.
+                                        </p>
+                                        <p className="mission-vision__paragraph paragraph">
+                                            Ofrecemos asesoría integral en la elaboración de tesis, garantizando
+                                            alta calidad y rigurosidad ética. Nos comprometemos a brindar un
+                                            servicio personalizado, desde la selección del tema hasta la
+                                            revisión final, promoviendo la originalidad y el desarrollo
+                                            profesional de cada estudiante.
+                                        </p>
+                                        <p className="mission-vision__paragraph paragraph">
+                                            Guiamos a nuestros estudiantes en cada paso del proceso, asegurando
+                                            que sus trabajos cumplan con los estándares académicos y editoriales
+                                            más exigentes, fomentando siempre la honestidad intelectual y la
+                                            integridad académica.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article className={`mission-vision__card hidden ${Secc7MeInView ? 'fade-in-fwd' : 'fade-in'}`} ref={Secc7MeRef}>
+                                <figure className="mission-vision__figure">
+                                    <img
+                                        className="mission-vision__img"
+                                        src={NosotrosImg4}
+                                        loading="lazy"
+                                        alt="Una estudiante con bata de graduación mirando de frente sonriendo"
+                                    />
+                                </figure>
+                                <div className="mission-vision__texts">
+                                    <span className="mission-vision__guide guide">Nuestro futuro</span>
+                                    <h2 className="mission-vision__title title">
+                                        <span className="three">Visión</span>
+                                    </h2>
+                                    <div className="paragraphs">
+                                        <p className="mission-vision__paragraph paragraph">
+                                            Aspiramos a ser la empresa líder en asesoría y elaboración de tesis,
+                                            reconocida por la calidad excepcional de nuestros servicios y la
+                                            experiencia de nuestro equipo de profesionales.
+                                        </p>
+                                        <p className="mission-vision__paragraph paragraph">
+                                            Nos comprometemos con el éxito académico de cada estudiante, siendo
+                                            la referencia de confianza para aquellos que buscan alcanzar la
+                                            excelencia en sus trabajos de tesis.
+                                        </p>
+                                        <p className="mission-vision__paragraph paragraph">
+                                            Queremos posicionarnos como un pilar fundamental en la formación
+                                            académica y profesional de nuestros clientes, ofreciendo un apoyo
+                                            integral y de alta calidad.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </section>

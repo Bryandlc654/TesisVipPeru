@@ -28,7 +28,6 @@ const run = async () => {
       console.log(`Usuario administrador creado: ${config.admin.email}`);
     }
 
-    console.log(`Contraseña: ${config.admin.password}`);
     console.log('Listo. Ya puedes iniciar sesión en /admin/login');
   } catch (error) {
     console.error('Error al ejecutar el seed:', error.message);

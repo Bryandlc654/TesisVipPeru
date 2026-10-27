@@ -21,10 +21,12 @@ const Inicio = () => {
     e.preventDefault();
     const { nombres, carrera, celular, servicio, mensaje } = formData;
 
-    if (nombres && carrera && celular && servicio && mensaje) {
-      const whatsappMessage = `Hola, soy ${nombres}, estudiante de ${carrera}. Me gustaría solicitar el servicio de ${servicio}. Mi número de celular es ${celular}. Mensaje adicional: ${mensaje}.`;
-      const phone = get('hero.form.whatsapp') || '';
-      const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
+    if (nombres && carrera && celular && servicio) {
+      const extraMsg = mensaje ? ` Mensaje adicional: ${mensaje}.` : '';
+      const whatsappMessage = `Hola, soy ${nombres}, estudiante de ${carrera}. Me gustaría solicitar el servicio de ${servicio}. Mi número de celular es ${celular}.${extraMsg}`;
+      const phone = get('hero.form.whatsapp') || '51917622183';
+      const cleanPhone = String(phone).replace(/\D/g, '');
+      const whatsappURL = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
       window.open(whatsappURL, '_blank');
       setFormData({
@@ -48,16 +50,31 @@ const Inicio = () => {
   return (
     <>
       <header className="hero hero--home">
+        <div className="hero__video-container" aria-hidden="true">
+          <video
+            className="hero__video"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/videos/web.mp4" type="video/mp4" />
+          </video>
+          <div className="hero__video-overlay" />
+        </div>
         <Navbar />
         <Button />
         <section className="hero__main container">
           <div className="hero__content">
             <div className={`hero__texts hidden ${Secc1MeInView ? 'fade-in-left' : 'fade-in'}`} ref={Secc1MeRef}>
-              <Text path="hero.info" as="p" className="hero__info" />
+              {(editMode || String(get('hero.info') ?? '').trim() !== '') && (
+                <Text path="hero.info" as="p" className="hero__info" />
+              )}
               <h1 className="hero__title hero__title--home title">
-                <Text path="hero.title1" as="span" className="one" />
-                <Text path="hero.title2" as="span" className="two" />
+                <Text path="hero.title1" as="span" className="one" multiline />
+                <Text path="hero.title2" as="span" className="two" multiline />
               </h1>
+              <Text path="hero.subtitle" as="p" className="hero__subtitle" />
             </div>
             <div className={`form form--transparent hidden ${Secc1MeInView ? 'fade-in-right' : 'fade-in'}`} ref={Secc1MeRef}>
               <Text path="hero.formTitle" as="p" className="form__title" />

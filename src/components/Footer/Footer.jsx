@@ -56,6 +56,7 @@ const Footer = () => {
                 path="footer.contactParagraph"
                 as="p"
                 className="footer__info-contact paragraph"
+                multiline
               />
             </div>
             <ul className="footer__menu">
@@ -94,6 +95,9 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+            <div className="footer__action">
+              <LinkField path="footer.cta" className="btn-primary footer__btn" />
+            </div>
           </nav>
         </div>
         <p className="footer__development container">

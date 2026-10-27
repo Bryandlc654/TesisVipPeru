@@ -9,11 +9,7 @@ const DataBlock = ({ copy }) => {
 
   return (
     <div className={`data__animate ${copy ? 'data__animate--copy' : ''}`}>
-      <div className="data__texts">
-        <Text path="navbar.ruc" as="p" className="data__ruc" />
-        <Text path="navbar.name" as="p" className="data__name" />
-      </div>
-      <ul className="data__menu">
+      <ul className="data__menu data__menu--socials">
         {socials.map((social, index) => (
           <li className="data__item" key={`${copy ? 'copy-' : ''}${social.label}-${index}`}>
             <LinkField
@@ -25,6 +21,8 @@ const DataBlock = ({ copy }) => {
             </LinkField>
           </li>
         ))}
+      </ul>
+      <ul className="data__menu data__menu--contact">
         <li className="data__item">
           <a
             className="data__link data__link-email"
@@ -43,6 +41,18 @@ const DataBlock = ({ copy }) => {
             <Icon name="geo" size={16} />
             <Text path="navbar.address" as="span" />
           </address>
+        </li>
+        <li className="data__item">
+          <a
+            className="data__link data__link-book"
+            href="/LibroDeReclamaciones"
+            target="_blank"
+            rel="noreferrer"
+            title="Libro de Reclamaciones"
+          >
+            <Icon name="journal" size={16} />
+            <span>Libro de Reclamaciones</span>
+          </a>
         </li>
       </ul>
     </div>

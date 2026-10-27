@@ -12,7 +12,7 @@ const group = (image, title1, title2, paragraph, href) => ({
   title2,
   paragraph,
   icon: 'whatsapp',
-  phone: '+51 930 443 379',
+  phone: '+51 917 622 183',
   phoneLabel: 'Whatsapp',
   cta: { label: 'Iniciar', href, target: '_blank' },
 });
@@ -35,16 +35,16 @@ export const defaultServiciosContent = {
     items: [
       group(
         ServiceImg1,
-        'Redacción de Tesis',
+        'Asesoría de Tesis',
         'de Pregrado',
-        'Nuestro servicio de redacción de tesis de pregrado está diseñado para ayudarte a alcanzar el éxito académico. Contamos con un equipo de expertos en diversas disciplinas que te guiarán en cada etapa del proceso, desde la investigación hasta la presentación final.',
+        'Nuestro servicio de asesoría de tesis de pregrado está diseñado para ayudarte a alcanzar el éxito académico. Contamos con un equipo de expertos en diversas disciplinas que te guiarán en cada etapa del proceso, desde la investigación hasta la presentación final.',
         'https://wa.link/yrgtop',
       ),
       group(
         ServiceImg2,
-        'Redacción de Tesis',
+        'Asesoría de Tesis',
         'de Postgrado',
-        'Te brindamos un servicio especializado en la redacción de tesis de postgrado, con un enfoque en la excelencia académica y la profundidad de investigación. Nuestros expertos te guiarán en la estructuración, análisis y presentación de tu trabajo, asegurando que cumpla con los más altos estándares académicos.',
+        'Te brindamos un servicio especializado en la asesoría de tesis de postgrado, con un enfoque en la excelencia académica y la profundidad de investigación. Nuestros expertos te guiarán en la estructuración, análisis y presentación de tu trabajo, asegurando que cumpla con los más altos estándares académicos.',
         'https://wa.link/8z5jt9',
       ),
       group(

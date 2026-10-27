@@ -1,8 +1,5 @@
 import ContactoImg from '../assets/img/estudiante-contacto.webp';
 
-const CALENDAR =
-  'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1ST_cfzAXUmKy1YHXaKWXlgYYgropwbZcXo1SPR-jnE1WBrkB76Mj8YVsUmkmRbopBmMW8o4_k';
-
 export const contactoScope = ['pageHero', 'info', 'socials', 'form', 'map'];
 
 export const defaultContactoContent = {
@@ -17,9 +14,9 @@ export const defaultContactoContent = {
       'Nuestro equipo de soporte está listo para ayudarte con cualquier duda que puedas tener. ¡No dudes en ponerte en contacto con nosotros!',
     items: [
       { icon: 'geo', name: 'Oficina', value: 'Miguel Grau, Chaclacayo 15476' },
-      { icon: 'telephone', name: 'Celular', value: '+51 930 443 379' },
+      { icon: 'telephone', name: 'Celular', value: '+51 917 622 183' },
       { icon: 'envelope', name: 'Correo', value: 'info@tesis-vip.com' },
-      { icon: 'cameraVideo', name: 'Asesoría', value: 'Agendar ahora' },
+      { icon: 'headset', name: 'Asesoría', value: 'Hablar con un asesor', href: 'https://wa.link/70uspg' },
     ],
   },
   socials: [
@@ -38,7 +35,6 @@ export const defaultContactoContent = {
     icon: 'headset',
     name: 'Asesoría Personalizada',
     text: 'Diseñado para ofrecerte soluciones adaptadas a tus necesidades específicas',
-    cta: { label: 'Agendar ahora', href: CALENDAR, target: '_blank' },
     image: ContactoImg,
     imageAlt: 'Estudiante',
     guide: 'Déjanos tus datos',
@@ -48,8 +44,8 @@ export const defaultContactoContent = {
     phonePlaceholder: 'Celular',
     servicePlaceholder: 'Seleccione un servicio',
     messagePlaceholder: 'Escribe tu mensaje aquí',
-    submitLabel: 'Enviar',
-    whatsapp: '+51901815850',
+    submitLabel: 'Hablar con un asesor',
+    whatsapp: '+51917622183',
     careers: [
       'Ciencias Sociales',
       'Ciencias de la Salud',
@@ -61,8 +57,8 @@ export const defaultContactoContent = {
       'otros',
     ],
     services: [
-      'Redacción de Tesis de Pregrado',
-      'Redacción de Tesis de Postgrado',
+      'Asesoría de Tesis de Pregrado',
+      'Asesoría de Tesis de Postgrado',
       'Levantamiento de Observaciones',
       'Parafraseo',
     ],
